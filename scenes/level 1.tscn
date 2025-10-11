@@ -5,10 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://bv0c2ao5p52oj" path="res://assets/Modern tiles_Free/Interiors_free/48x48/Room_Builder_free_48x48.png" id="2_kf3d8"]
 [ext_resource type="Texture2D" uid="uid://crqkobtamh2sh" path="res://assets/Modern tiles_Free/Interiors_free/48x48/Interiors_free_48x48.png" id="3_poelv"]
 [ext_resource type="PackedScene" uid="uid://dhfw32r5ech16" path="res://scenes/spawn.tscn" id="5_2sj2h"]
-[ext_resource type="AudioStream" uid="uid://dsdxae5wt4s3g" path="res://assets/music-loop-bundle-download_2024_q1/music-loop-bundle-download_2024_q1/Sketchbook 2024-02-21_01.ogg" id="5_o16nf"]
 [ext_resource type="Script" uid="uid://cirft3lyh27sy" path="res://scenes/score.gd" id="6_kvult"]
 [ext_resource type="PackedScene" uid="uid://dl8dl8j7gem6y" path="res://scenes/client.tscn" id="6_ow2ny"]
 [ext_resource type="FontFile" uid="uid://b1jcjir01uihm" path="res://assets/KiwiSoda.ttf" id="7_1uqwn"]
+[ext_resource type="AudioStream" uid="uid://dpkek6eti1byy" path="res://assets/track 3.wav" id="9_2sj2h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o16nf"]
 texture = ExtResource("2_kf3d8")
@@ -3231,8 +3231,7 @@ a = Vector2(1943.8877, -150.77605)
 b = Vector2(1933.8677, 1538.8027)
 
 [node name="level 1" type="Node2D"]
-position = Vector2(9, 2)
-scale = Vector2(0.499, 0.451)
+scale = Vector2(0.8348344, 0.7513546)
 script = ExtResource("1_kvult")
 
 [node name="Layer0" type="TileMapLayer" parent="."]
@@ -3306,10 +3305,6 @@ unique_name_in_owner = true
 position = Vector2(305, 245)
 scale = Vector2(1.9088299, 1.7784854)
 
-[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_o16nf")
-autoplay = true
-
 [node name="StaticBody2D5" type="StaticBody2D" parent="."]
 visible = false
 
@@ -3344,6 +3339,7 @@ text = "
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("6_kvult")
+metadata/_edit_use_anchors_ = true
 
 [node name="wall" type="Area2D" parent="."]
 collision_layer = 2
@@ -3351,7 +3347,8 @@ collision_layer = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wall"]
 shape = SubResource("SegmentShape2D_dqu65")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(1154.3086, 705.0998)
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_2sj2h")
+autoplay = true
 
 [connection signal="area_entered" from="wall" to="client" method="_on_wall_area_entered"]

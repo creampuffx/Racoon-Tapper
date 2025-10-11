@@ -8,7 +8,7 @@ extends Node2D
 ]
 
 func _on_timer_timeout() -> void:
-	var door = doors[randi() %doors.size()]
+	var door = doors[randi() % doors.size()]
 	var cli =  client_scene.instantiate()
 	cli.position = door.position
 	get_parent().add_child(cli)

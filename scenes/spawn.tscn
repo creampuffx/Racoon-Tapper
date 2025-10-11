@@ -6,7 +6,7 @@
 script = ExtResource("1_auhge")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 4.2940000000000005
+wait_time = 1.4789999999999999
 autostart = true
 
 [node name="door1" type="Marker2D" parent="."]

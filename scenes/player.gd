@@ -4,12 +4,18 @@ extends CharacterBody2D
 @onready var bullet = preload("res://scenes/beer.tscn")
 var b 
 
-func get_input():
-	var input_direction = Input.get_vector("left", "right", "up", "down")
-	velocity = input_direction * speed
+func _psychics_process (delta):
+	var direction = 0
+	
+	if Input.is_action_just_pressed("right"):
+		direction += 1
+	if Input.is_action_just_pressed("left"):
+		direction -= 1 
+	velocity.x = direction * speed
+	move_and_slide()
 
 func _physics_process(delta):
-	get_input()
+	_psychics_process(delta)
 	move_and_slide()
 	shoot()
 	

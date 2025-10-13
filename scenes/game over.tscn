@@ -1,7 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://dd5raw8mle1yo"]
+[gd_scene load_steps=18 format=3 uid="uid://dd5raw8mle1yo"]
 
 [ext_resource type="Script" uid="uid://queic38y74ch" path="res://scenes/game_over.gd" id="1_hnr1f"]
 [ext_resource type="FontFile" uid="uid://b1jcjir01uihm" path="res://assets/KiwiSoda.ttf" id="1_y1imj"]
+[ext_resource type="Script" uid="uid://c1yggrec6secx" path="res://scenes/score2.gd" id="3_vpbcb"]
 
 [sub_resource type="Theme" id="Theme_hnr1f"]
 
@@ -99,17 +100,28 @@ grow_vertical = 2
 script = ExtResource("1_hnr1f")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
-offset_right = 1147.0
-offset_bottom = 642.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0.91552997, 0.819612, 0.6877281, 1)
 
 [node name="Button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 469.0
-offset_top = 425.0
-offset_right = 666.0
-offset_bottom = 467.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -336.0
+offset_top = 16.000061
+offset_right = -139.0
+offset_bottom = 58.00006
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3.3863173, 4.3850365)
 size_flags_vertical = 3
 theme = SubResource("Theme_hnr1f")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -132,22 +144,48 @@ icon = SubResource("MeshTexture_bgmfq")
 
 [node name="game over" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_left = -484.0
-offset_top = 140.99998
-offset_right = -271.30542
-offset_bottom = 397.1449
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -875.9999
+offset_top = -412.0
+offset_right = -50.999878
+offset_bottom = -155.8551
 grow_horizontal = 2
+grow_vertical = 2
 rotation = -0.0022131763
+scale = Vector2(2.182635, 1.7137214)
 theme = SubResource("Theme_lrid3")
 theme_override_colors/font_color = Color(0.8039216, 0.6627451, 0.4627451, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 165
 text = "GAME OVER"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="score" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.35984364
+anchor_top = 0.69452655
+anchor_right = 0.35984364
+anchor_bottom = 0.69452655
+offset_left = 50.1002
+offset_top = 39.91131
+offset_right = 494.99
+offset_bottom = 242.91132
+theme_override_colors/font_color = Color(0.6567116, 0.52288854, 0.32987076, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_y1imj")
+theme_override_font_sizes/font_size = 100
+text = "
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_vpbcb")
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

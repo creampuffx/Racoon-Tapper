@@ -1,6 +1,7 @@
-[gd_scene load_steps=19 format=3 uid="uid://bj3i5gjn2lj3t"]
+[gd_scene load_steps=21 format=3 uid="uid://bj3i5gjn2lj3t"]
 
 [ext_resource type="Script" uid="uid://bjvtrlsuqrhr1" path="res://scenes/player.gd" id="1_g2els"]
+[ext_resource type="PackedScene" uid="uid://bsqqwuij0i8co" path="res://scenes/empty_beer.tscn" id="2_dqkch"]
 [ext_resource type="Texture2D" uid="uid://osou201nad5q" path="res://assets/sRaccoon_free.png" id="2_qhqgy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ow2ny"]
@@ -125,11 +126,17 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2els"]
-radius = 14.0
-height = 28.0
+radius = 11.996474
+height = 25.992935
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
+size = Vector2(91, 148.5)
 
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_g2els")
+
+[node name="empty beer" parent="." instance=ExtResource("2_dqkch")]
+visible = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -1)
@@ -137,10 +144,21 @@ scale = Vector2(2.8359377, 2.6640627)
 sprite_frames = SubResource("SpriteFrames_ow2ny")
 animation = &"walk_right"
 autoplay = "walk_down"
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 27)
+rotation = 3.1450477
 shape = SubResource("CapsuleShape2D_g2els")
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(-32, -76)
+
+[node name="collect" type="Area2D" parent="." groups=["player"]]
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="collect"]
+position = Vector2(-2.5, -31.75)
+shape = SubResource("RectangleShape2D_g2els")
+
+[connection signal="area_entered" from="collect" to="empty beer" method="_on_collect_area_entered"]

@@ -1,16 +1,19 @@
-[gd_scene load_steps=25 format=4 uid="uid://bbvi7bqkurtbo"]
+[gd_scene load_steps=43 format=4 uid="uid://bbvi7bqkurtbo"]
 
-[ext_resource type="PackedScene" uid="uid://bj3i5gjn2lj3t" path="res://scenes/player.tscn" id="1_dnskr"]
 [ext_resource type="Script" uid="uid://b8ag6qlhb3sfq" path="res://scenes/level_1.gd" id="1_kvult"]
 [ext_resource type="Texture2D" uid="uid://bv0c2ao5p52oj" path="res://assets/Modern tiles_Free/Interiors_free/48x48/Room_Builder_free_48x48.png" id="2_kf3d8"]
+[ext_resource type="Script" uid="uid://o5k8lbgidtbr" path="res://scenes/node_2d.gd" id="3_bsmkr"]
 [ext_resource type="Texture2D" uid="uid://crqkobtamh2sh" path="res://assets/Modern tiles_Free/Interiors_free/48x48/Interiors_free_48x48.png" id="3_poelv"]
-[ext_resource type="PackedScene" uid="uid://dhfw32r5ech16" path="res://scenes/spawn.tscn" id="5_2sj2h"]
+[ext_resource type="Script" uid="uid://bjvtrlsuqrhr1" path="res://scenes/player.gd" id="6_hc45n"]
 [ext_resource type="Script" uid="uid://cirft3lyh27sy" path="res://scenes/score.gd" id="6_kvult"]
 [ext_resource type="PackedScene" uid="uid://dl8dl8j7gem6y" path="res://scenes/client.tscn" id="6_ow2ny"]
 [ext_resource type="FontFile" uid="uid://b1jcjir01uihm" path="res://assets/KiwiSoda.ttf" id="7_1uqwn"]
+[ext_resource type="Texture2D" uid="uid://osou201nad5q" path="res://assets/sRaccoon_free.png" id="7_gthes"]
 [ext_resource type="AudioStream" uid="uid://dpkek6eti1byy" path="res://assets/track 3.wav" id="9_2sj2h"]
 [ext_resource type="Script" uid="uid://unx8rbywpsfv" path="res://scenes/lives.gd" id="10_bsmkr"]
 [ext_resource type="Texture2D" uid="uid://pamyytouhyyn" path="res://images2/red-pixel-heart-2.png" id="11_3pdoh"]
+[ext_resource type="PackedScene" uid="uid://bsqqwuij0i8co" path="res://scenes/empty_beer.tscn" id="12_3pdoh"]
+[ext_resource type="AudioStream" uid="uid://d30pnauwfbyvk" path="res://assets/glass-bottle-breaking-351297.mp3" id="13_hc45n"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o16nf"]
 texture = ExtResource("2_kf3d8")
@@ -3205,13 +3208,136 @@ texture_region_size = Vector2i(48, 48)
 tile_size = Vector2i(48, 48)
 sources/1 = SubResource("TileSetAtlasSource_kvult")
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kf3d8"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_poelv"]
-size = Vector2(1052.3981, 66.858185)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kf3d8"]
 size = Vector2(1170, 199)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ow2ny"]
+atlas = ExtResource("7_gthes")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
+atlas = ExtResource("7_gthes")
+region = Rect2(64, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gvhk2"]
+atlas = ExtResource("7_gthes")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kf3d8"]
+atlas = ExtResource("7_gthes")
+region = Rect2(64, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_poelv"]
+atlas = ExtResource("7_gthes")
+region = Rect2(128, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o16nf"]
+atlas = ExtResource("7_gthes")
+region = Rect2(192, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1uqwn"]
+atlas = ExtResource("7_gthes")
+region = Rect2(0, 64, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2sj2h"]
+atlas = ExtResource("7_gthes")
+region = Rect2(64, 64, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqu65"]
+atlas = ExtResource("7_gthes")
+region = Rect2(128, 64, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bsmkr"]
+atlas = ExtResource("7_gthes")
+region = Rect2(192, 64, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3pdoh"]
+atlas = ExtResource("7_gthes")
+region = Rect2(0, 96, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hc45n"]
+atlas = ExtResource("7_gthes")
+region = Rect2(64, 96, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gthes"]
+atlas = ExtResource("7_gthes")
+region = Rect2(128, 96, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p75kv"]
+atlas = ExtResource("7_gthes")
+region = Rect2(192, 96, 64, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ow2ny"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ow2ny")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g2els")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gvhk2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kf3d8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_poelv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o16nf")
+}],
+"loop": true,
+"name": &"walk_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1uqwn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2sj2h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqu65")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bsmkr")
+}],
+"loop": true,
+"name": &"walk_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3pdoh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hc45n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gthes")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p75kv")
+}],
+"loop": true,
+"name": &"walk_up",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2els"]
+radius = 11.996474
+height = 25.992935
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
+size = Vector2(75, 148.5)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_kvult"]
 a = Vector2(-10.020042, 1490.0221)
@@ -3226,7 +3352,7 @@ a = Vector2(2304.6094, 1523.2816)
 b = Vector2(2302.6052, 4.43459)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dqu65"]
-size = Vector2(98.19757, 844.7893)
+size = Vector2(98.19757, 928.7375)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_dqu65"]
 a = Vector2(1943.8877, -150.77605)
@@ -3247,17 +3373,38 @@ tile_map_data = PackedByteArray("AAD//wAAAAABAA8AAAD//wEAAAABABAAAAD//wIAAAABABE
 tile_set = SubResource("TileSet_ow2ny")
 rendering_quadrant_size = 64
 
+[node name="Spawn" type="Node2D" parent="."]
+position = Vector2(-65.88133, 39.927887)
+scale = Vector2(0.7619048, 1.0794872)
+script = ExtResource("3_bsmkr")
+
+[node name="Timer" type="Timer" parent="Spawn"]
+wait_time = 1.479
+autostart = true
+
+[node name="door1" type="Marker2D" parent="Spawn"]
+position = Vector2(-0.9559021, 554.5291)
+scale = Vector2(3.677613, 2.9301977)
+
+[node name="door2" type="Marker2D" parent="Spawn"]
+position = Vector2(-1.5721703, 845.7883)
+scale = Vector2(2.3329587, 2.8862405)
+
+[node name="door3" type="Marker2D" parent="Spawn"]
+position = Vector2(-1.5721664, 1129.3617)
+scale = Vector2(1, 2.775416)
+
 [node name="client" parent="." instance=ExtResource("6_ow2ny")]
 position = Vector2(50.100204, 554.32367)
+collision_layer = 8
 slide_on_ceiling = false
 
 [node name="Layer1" type="TileMapLayer" parent="."]
+z_index = 1
 use_parent_material = true
 scale = Vector2(2, 2)
 tile_map_data = PackedByteArray("AAATAAYAAQACAAsAAAASAAYAAQACAAsAAAARAAYAAQACAAsAAAAQAAYAAQACAAsAAAAPAAYAAQACAAsAAAAOAAYAAQACAAsAAAANAAYAAQACAAsAAAAMAAYAAQACAAsAAAALAAYAAQACAAsAAAAKAAYAAQACAAsAAAAJAAYAAQACAAsAAAAIAAYAAQACAAsAAAAHAAYAAQACAAsAAAAGAAYAAQACAAsAAAAFAAYAAQACAAsAAAAEAAYAAQACAAsAAAADAAYAAQACAAsAAAACAAYAAQACAAsAAAABAAYAAQACAAsAAAAAAAYAAQACAAsAAAATAAkAAQACAAsAAAASAAkAAQACAAsAAAARAAkAAQACAAsAAAAQAAkAAQACAAsAAAAPAAkAAQACAAsAAAAOAAkAAQACAAsAAAANAAkAAQACAAsAAAAMAAkAAQACAAsAAAALAAkAAQACAAsAAAAKAAkAAQACAAsAAAAJAAkAAQACAAsAAAAIAAkAAQACAAsAAAAHAAkAAQACAAsAAAAGAAkAAQACAAsAAAAFAAkAAQACAAsAAAAEAAkAAQACAAsAAAADAAkAAQACAAsAAAACAAkAAQACAAsAAAABAAkAAQACAAsAAAAAAAkAAQACAAsAAAATAAwAAQACAAsAAAASAAwAAQACAAsAAAARAAwAAQACAAsAAAAQAAwAAQACAAsAAAAPAAwAAQACAAsAAAAOAAwAAQACAAsAAAANAAwAAQACAAsAAAAMAAwAAQACAAsAAAALAAwAAQACAAsAAAAKAAwAAQACAAsAAAAJAAwAAQACAAsAAAAIAAwAAQACAAsAAAAHAAwAAQACAAsAAAAGAAwAAQACAAsAAAAFAAwAAQACAAsAAAAEAAwAAQACAAsAAAADAAwAAQACAAsAAAACAAwAAQACAAsAAAABAAwAAQACAAsAAAAAAAwAAQACAAsAAAATAA0AAQABACIAAAASAA0AAQABACIAAAARAA0AAQABACIAAAAQAA0AAQABACIAAAAPAA0AAQABACIAAAAOAA0AAQABACIAAAANAA0AAQABACIAAAAMAA0AAQABACIAAAALAA0AAQABACIAAAAKAA0AAQABACIAAAAJAA0AAQABACIAAAAIAA0AAQABACIAAAAHAA0AAQABACIAAAAGAA0AAQABACIAAAAFAA0AAQABACIAAAAEAA0AAQABACIAAAADAA0AAQABACIAAAACAA0AAQABACIAAAABAA0AAQABACIAAAAAAA0AAQABACIAAAATAAoAAQABACIAAAASAAoAAQABACIAAAARAAoAAQABACIAAAAQAAoAAQABACIAAAAPAAoAAQABACIAAAAOAAoAAQABACIAAAANAAoAAQABACIAAAAMAAoAAQABACIAAAALAAoAAQABACIAAAAKAAoAAQABACIAAAAJAAoAAQABACIAAAAIAAoAAQABACIAAAAHAAoAAQABACIAAAAGAAoAAQABACIAAAAFAAoAAQABACIAAAAEAAoAAQABACIAAAADAAoAAQABACIAAAACAAoAAQABACIAAAABAAoAAQABACIAAAAAAAoAAQABACIAAAATAAcAAQABACIAAAASAAcAAQABACIAAAARAAcAAQABACIAAAAQAAcAAQABACIAAAAPAAcAAQABACIAAAAOAAcAAQABACIAAAANAAcAAQABACIAAAAMAAcAAQABACIAAAALAAcAAQABACIAAAAKAAcAAQABACIAAAAJAAcAAQABACIAAAAIAAcAAQABACIAAAAHAAcAAQABACIAAAAGAAcAAQABACIAAAAFAAcAAQABACIAAAAEAAcAAQABACIAAAADAAcAAQABACIAAAACAAcAAQABACIAAAABAAcAAQABACIAAAAAAAcAAQABACIAAAABAAIAAQACABUAAAABAAMAAQACABYAAAACAAIAAQACABUAAAACAAMAAQACABYAAAAUAAcAAQABACIAAAAUAAoAAQABACIAAAAUAA0AAQABACIAAAAVAA0AAQABACIAAAAVAAoAAQABACIAAAAVAAcAAQABACIAAAAVAAYAAQACAAsAAAAUAAYAAQACAAsAAAAVAAkAAQACAAsAAAAUAAkAAQACAAsAAAAVAAwAAQACAAsAAAAUAAwAAQACAAsAAAAXAAYAAQAMAFEAAAAXAAcAAQAMAFIAAAAXAAgAAQAMAFMAAAAXAAkAAQAMAFEAAAAXAAoAAQAMAFIAAAAXAAsAAQAMAFMAAAAXAAwAAQAMAFEAAAAXAA0AAQAMAFIAAAAXAA4AAQAMAFMAAAA=")
 tile_set = SubResource("TileSet_1uqwn")
-
-[node name="Spawn" parent="." instance=ExtResource("5_2sj2h")]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
@@ -3267,47 +3414,47 @@ offset_right = 1155.0
 offset_bottom = 679.0
 color = Color(0.6596476, 0.65833884, 0.6547706, 1)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-scale = Vector2(2, 2)
-physics_material_override = SubResource("PhysicsMaterial_kf3d8")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(529.69904, 321.9291)
-shape = SubResource("RectangleShape2D_poelv")
-
-[node name="StaticBody2D3" type="StaticBody2D" parent="."]
-scale = Vector2(2, 2)
-physics_material_override = SubResource("PhysicsMaterial_kf3d8")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
-position = Vector2(529.44635, 610.89667)
-shape = SubResource("RectangleShape2D_poelv")
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
-scale = Vector2(2, 2)
-physics_material_override = SubResource("PhysicsMaterial_kf3d8")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(529.44635, 467.15625)
-shape = SubResource("RectangleShape2D_poelv")
-
 [node name="StaticBody2D4" type="StaticBody2D" parent="."]
 scale = Vector2(2, 2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
-visible = false
 position = Vector2(564, 91)
 shape = SubResource("RectangleShape2D_kf3d8")
 
-[node name="player" parent="." groups=["elemengts"] instance=ExtResource("1_dnskr")]
+[node name="player" type="CharacterBody2D" parent="." groups=["elemengts"]]
 unique_name_in_owner = true
-position = Vector2(2145.3357, 754.637)
+z_index = 2
+position = Vector2(2150.127, 754.637)
 scale = Vector2(1.9088299, 1.7784854)
+script = ExtResource("6_hc45n")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player"]
+position = Vector2(0, -1)
+scale = Vector2(2.8359377, 2.6640627)
+sprite_frames = SubResource("SpriteFrames_ow2ny")
+animation = &"walk_right"
+autoplay = "walk_down"
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
+position = Vector2(-1, 27)
+rotation = 3.1450477
+shape = SubResource("CapsuleShape2D_g2els")
+
+[node name="Marker2D" type="Marker2D" parent="player"]
+position = Vector2(-32, -76)
+
+[node name="collect" type="Area2D" parent="player"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player/collect"]
+position = Vector2(5.5, -31.75)
+shape = SubResource("RectangleShape2D_g2els")
 
 [node name="StaticBody2D5" type="StaticBody2D" parent="."]
 
-[node name="left wall" type="CollisionShape2D" parent="StaticBody2D5"]
+[node name="left wall" type="CollisionShape2D" parent="StaticBody2D5" groups=["left_wall"]]
 visible = false
+position = Vector2(17.967636, 0)
 shape = SubResource("SegmentShape2D_kvult")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
@@ -3319,8 +3466,7 @@ visible = false
 shape = SubResource("SegmentShape2D_2sj2h")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D5"]
-visible = false
-position = Vector2(2255.5122, 885.8094)
+position = Vector2(2255.5122, 927.78345)
 shape = SubResource("RectangleShape2D_dqu65")
 
 [node name="score" type="Label" parent="."]
@@ -3339,8 +3485,9 @@ vertical_alignment = 1
 script = ExtResource("6_kvult")
 metadata/_edit_use_anchors_ = true
 
-[node name="wall" type="Area2D" parent="."]
-collision_layer = 2
+[node name="wall" type="Area2D" parent="." groups=["walls"]]
+collision_layer = 8
+collision_mask = 20
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wall"]
 position = Vector2(177.28067, 131.76202)
@@ -3403,4 +3550,12 @@ position = Vector2(2061.4866, 188.992)
 scale = Vector2(0.22026633, 0.21835566)
 texture = ExtResource("11_3pdoh")
 
+[node name="glass_break" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_hc45n")
+
+[node name="empty beer" parent="." instance=ExtResource("12_3pdoh")]
+
+[connection signal="timeout" from="Spawn/Timer" to="Spawn" method="_on_timer_timeout"]
+[connection signal="area_entered" from="player/collect" to="." method="_on_collect_area_entered"]
+[connection signal="area_entered" from="wall" to="." method="_on_wall_area_entered"]
 [connection signal="area_entered" from="wall" to="client" method="_on_wall_area_entered"]

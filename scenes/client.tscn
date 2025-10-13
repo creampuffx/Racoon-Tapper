@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dl8dl8j7gem6y"]
+[gd_scene load_steps=8 format=3 uid="uid://dl8dl8j7gem6y"]
 
 [ext_resource type="Script" uid="uid://d4bxg5gui81on" path="res://scenes/client.gd" id="1_1t5vp"]
 [ext_resource type="Texture2D" uid="uid://dno74dnikbjqg" path="res://assets/Modern tiles_Free/Characters_free/Alex_idle_16x16.png" id="1_5f806"]
+[ext_resource type="AudioStream" uid="uid://d30pnauwfbyvk" path="res://assets/glass-bottle-breaking-351297.mp3" id="3_4tr0r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kvult"]
 atlas = ExtResource("1_5f806")
@@ -23,11 +24,13 @@ radius = 48.0
 height = 232.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1t5vp"]
-radius = 14.0
-height = 68.0
+radius = 43.000004
+height = 98.00001
 
-[node name="client" type="CharacterBody2D"]
+[node name="client" type="CharacterBody2D" groups=["clients"]]
 position = Vector2(97, 40)
+collision_layer = 4
+collision_mask = 2
 script = ExtResource("1_1t5vp")
 speed = 40
 
@@ -37,17 +40,23 @@ scale = Vector2(6, 5.796874)
 sprite_frames = SubResource("SpriteFrames_1uqwn")
 
 [node name="HurtBox" type="Area2D" parent="."]
-position = Vector2(243, 150)
+position = Vector2(243, 149)
 collision_layer = 4
-collision_mask = 2
+collision_mask = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 position = Vector2(-243, -119)
 shape = SubResource("CapsuleShape2D_5f806")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(23, 14)
-rotation = -1.5707964
+position = Vector2(0, -34)
+rotation = -3.1415927
 shape = SubResource("CapsuleShape2D_1t5vp")
+
+[node name="empty_beer_position" type="Marker2D" parent="."]
+position = Vector2(0, 30)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_4tr0r")
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]

@@ -1,5 +1,10 @@
 extends Node2D
+@onready var empty_beer: CharacterBody2D = $"empty beer"
 
+
+func _ready() -> void:
+	Global.SCORE = 0
+	
 
 	
 func get_input():
@@ -21,4 +26,10 @@ func get_input():
 
 func _physics_process(delta):
 	get_input()
+	
+
+
+func _on_wall_area_entered(area: Area2D) -> void:
+	$glass_break.play()
+	Global.break_life(1)
 	

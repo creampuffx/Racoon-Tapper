@@ -34,6 +34,11 @@ enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 [global_group]
 
 elements=""
+drink-not-empty=""
+walls=""
+clients=""
+left_wall=""
+player=""
 
 [input]
 
@@ -77,6 +82,7 @@ put={
 2d_physics/layer_1="world"
 2d_physics/layer_2="hitbox"
 2d_physics/layer_3="clients"
+2d_physics/layer_4="wall"
 
 [rendering]
 

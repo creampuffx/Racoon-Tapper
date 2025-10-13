@@ -9,8 +9,16 @@ func _physics_process(delta: float) -> void:
 	
 
 
-func _on_area_2d_area_entered(area: Area2D) -> void:
-	Global.add_score(100)
-	queue_free()
+
+func _on_area_2d_area_entered(area):
+	if area.is_in_group("clients"):
+		Global.add_score(100)
+		queue_free()
+	if area.is_in_group("left_wall"):
+		Global.break_life(1)
+		$AudioStreamPlayer.play()
+		queue_free()
+		
+
 	
 	

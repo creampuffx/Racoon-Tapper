@@ -7,14 +7,15 @@
 size = Vector2(15.166666, 22.333334)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_he3c0"]
-size = Vector2(32, 35)
+size = Vector2(24.333332, 33.333336)
 
-[node name="beer" type="CharacterBody2D"]
+[node name="beer" type="CharacterBody2D" groups=["drink-not-empty"]]
+z_index = 3
 scale = Vector2(3, 3)
 script = ExtResource("1_31xl2")
 initial_speed = 2000
 target_speed = 2000
-lifespan = 12
+lifespan = 20
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(1.0333333, 1.1)
@@ -24,13 +25,12 @@ texture = ExtResource("1_7v8bv")
 position = Vector2(-3.416667, 0.5000005)
 shape = SubResource("RectangleShape2D_31xl2")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=["drink-not-empty"]]
 collision_layer = 2
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-visible = false
-position = Vector2(0.666667, 0.5)
+position = Vector2(-3.1666667, -0.33333302)
 shape = SubResource("RectangleShape2D_he3c0")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

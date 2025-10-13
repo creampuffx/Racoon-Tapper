@@ -125,8 +125,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2els"]
-radius = 11.0
-height = 62.0
+radius = 14.0
+height = 28.0
 
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_g2els")
@@ -135,12 +135,11 @@ script = ExtResource("1_g2els")
 position = Vector2(0, -1)
 scale = Vector2(2.8359377, 2.6640627)
 sprite_frames = SubResource("SpriteFrames_ow2ny")
-animation = &"walk_down"
+animation = &"walk_right"
 autoplay = "walk_down"
-frame_progress = 0.10961142
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, 9)
+position = Vector2(-1, 27)
 shape = SubResource("CapsuleShape2D_g2els")
 
 [node name="Marker2D" type="Marker2D" parent="."]

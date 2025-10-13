@@ -12,5 +12,6 @@ func _on_hurt_box_area_entered(area: Area2D) -> void:
 	queue_free()
 
 
-func _on_wall_area_entered(area: Area2D) -> void:
-	queue_free()
+
+	
+	

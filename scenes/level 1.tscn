@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://bbvi7bqkurtbo"]
+[gd_scene load_steps=25 format=4 uid="uid://bbvi7bqkurtbo"]
 
 [ext_resource type="PackedScene" uid="uid://bj3i5gjn2lj3t" path="res://scenes/player.tscn" id="1_dnskr"]
 [ext_resource type="Script" uid="uid://b8ag6qlhb3sfq" path="res://scenes/level_1.gd" id="1_kvult"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://dl8dl8j7gem6y" path="res://scenes/client.tscn" id="6_ow2ny"]
 [ext_resource type="FontFile" uid="uid://b1jcjir01uihm" path="res://assets/KiwiSoda.ttf" id="7_1uqwn"]
 [ext_resource type="AudioStream" uid="uid://dpkek6eti1byy" path="res://assets/track 3.wav" id="9_2sj2h"]
+[ext_resource type="Script" uid="uid://unx8rbywpsfv" path="res://scenes/lives.gd" id="10_bsmkr"]
+[ext_resource type="Texture2D" uid="uid://pamyytouhyyn" path="res://images2/red-pixel-heart-2.png" id="11_3pdoh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o16nf"]
 texture = ExtResource("2_kf3d8")
@@ -3206,7 +3208,7 @@ sources/1 = SubResource("TileSetAtlasSource_kvult")
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kf3d8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_poelv"]
-size = Vector2(957.5, 79.5)
+size = Vector2(1052.3981, 66.858185)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kf3d8"]
 size = Vector2(1170, 199)
@@ -3230,6 +3232,9 @@ size = Vector2(98.19757, 844.7893)
 a = Vector2(1943.8877, -150.77605)
 b = Vector2(1933.8677, 1538.8027)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2sj2h"]
+size = Vector2(2219.6016, 149.06406)
+
 [node name="level 1" type="Node2D"]
 scale = Vector2(0.8348344, 0.7513546)
 script = ExtResource("1_kvult")
@@ -3244,6 +3249,7 @@ rendering_quadrant_size = 64
 
 [node name="client" parent="." instance=ExtResource("6_ow2ny")]
 position = Vector2(50.100204, 554.32367)
+slide_on_ceiling = false
 
 [node name="Layer1" type="TileMapLayer" parent="."]
 use_parent_material = true
@@ -3262,37 +3268,30 @@ offset_bottom = 679.0
 color = Color(0.6596476, 0.65833884, 0.6547706, 1)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-visible = false
 scale = Vector2(2, 2)
 physics_material_override = SubResource("PhysicsMaterial_kf3d8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-visible = false
-position = Vector2(482.25, 328.25)
+position = Vector2(529.69904, 321.9291)
 shape = SubResource("RectangleShape2D_poelv")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="."]
-visible = false
 scale = Vector2(2, 2)
 physics_material_override = SubResource("PhysicsMaterial_kf3d8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
-visible = false
-position = Vector2(482, 617)
+position = Vector2(529.44635, 610.89667)
 shape = SubResource("RectangleShape2D_poelv")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
-visible = false
 scale = Vector2(2, 2)
 physics_material_override = SubResource("PhysicsMaterial_kf3d8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-visible = false
-position = Vector2(482, 472)
+position = Vector2(529.44635, 467.15625)
 shape = SubResource("RectangleShape2D_poelv")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="."]
-visible = false
 scale = Vector2(2, 2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
@@ -3302,11 +3301,10 @@ shape = SubResource("RectangleShape2D_kf3d8")
 
 [node name="player" parent="." groups=["elemengts"] instance=ExtResource("1_dnskr")]
 unique_name_in_owner = true
-position = Vector2(494.7089, 243.5601)
+position = Vector2(2145.3357, 754.637)
 scale = Vector2(1.9088299, 1.7784854)
 
 [node name="StaticBody2D5" type="StaticBody2D" parent="."]
-visible = false
 
 [node name="left wall" type="CollisionShape2D" parent="StaticBody2D5"]
 visible = false
@@ -3345,7 +3343,7 @@ metadata/_edit_use_anchors_ = true
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wall"]
-position = Vector2(173.68715, 0)
+position = Vector2(177.28067, 131.76202)
 shape = SubResource("SegmentShape2D_dqu65")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
@@ -3354,8 +3352,29 @@ autoplay = true
 
 [node name="teleport" type="Node2D" parent="."]
 
+[node name="tp1" type="Area2D" parent="teleport"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="teleport/tp1"]
+visible = false
+position = Vector2(1096.6246, 782.58655)
+shape = SubResource("RectangleShape2D_2sj2h")
+
+[node name="tp2" type="Area2D" parent="teleport"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="teleport/tp2"]
+visible = false
+position = Vector2(1096.0258, 1062.0818)
+shape = SubResource("RectangleShape2D_2sj2h")
+
+[node name="tp3" type="Area2D" parent="teleport"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="teleport/tp3"]
+visible = false
+position = Vector2(1096.0258, 1350.8934)
+shape = SubResource("RectangleShape2D_2sj2h")
+
 [node name="tep1" type="Marker2D" parent="."]
-position = Vector2(2150.5745, 754.93604)
+position = Vector2(2150, 754)
 scale = Vector2(0.52388114, 0.5622761)
 
 [node name="tep2" type="Marker2D" parent="."]
@@ -3365,5 +3384,23 @@ scale = Vector2(0.52388114, 0.5622761)
 [node name="tep3" type="Marker2D" parent="."]
 position = Vector2(2145.336, 1309.6345)
 scale = Vector2(0.52388114, 0.5622761)
+
+[node name="lives" type="Node2D" parent="."]
+script = ExtResource("10_bsmkr")
+
+[node name="live1" type="Sprite2D" parent="lives"]
+position = Vector2(1721.4722, 187.66107)
+scale = Vector2(0.22026633, 0.21835566)
+texture = ExtResource("11_3pdoh")
+
+[node name="live2" type="Sprite2D" parent="lives"]
+position = Vector2(1892.5908, 190.32292)
+scale = Vector2(0.22026633, 0.21835566)
+texture = ExtResource("11_3pdoh")
+
+[node name="live3" type="Sprite2D" parent="lives"]
+position = Vector2(2061.4866, 188.992)
+scale = Vector2(0.22026633, 0.21835566)
+texture = ExtResource("11_3pdoh")
 
 [connection signal="area_entered" from="wall" to="client" method="_on_wall_area_entered"]

@@ -23,14 +23,13 @@ radius = 48.0
 height = 232.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1t5vp"]
-radius = 17.0
-height = 38.0
+radius = 14.0
+height = 68.0
 
 [node name="client" type="CharacterBody2D"]
 position = Vector2(97, 40)
 script = ExtResource("1_1t5vp")
 speed = 40
-metadata/_edit_lock_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -40)
@@ -47,7 +46,8 @@ position = Vector2(-243, -119)
 shape = SubResource("CapsuleShape2D_5f806")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 16)
+position = Vector2(23, 14)
+rotation = -1.5707964
 shape = SubResource("CapsuleShape2D_1t5vp")
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]

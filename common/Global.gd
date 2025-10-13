@@ -4,6 +4,10 @@ var SCORE: int = 0
 
 func add_score(points:int):
 	SCORE += points
-	print(SCORE)
 	
 	
+var lives: int = 3
+
+func break_life(damage:int):
+	lives -= damage
+	print(lives)

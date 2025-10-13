@@ -24,6 +24,7 @@ Global="*res://common/Global.gd"
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=3
+window/size/initial_position=Vector2i(0, -2)
 window/stretch/mode="viewport"
 
 [editor_plugins]

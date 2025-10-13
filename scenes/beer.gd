@@ -14,10 +14,14 @@ func _on_area_2d_area_entered(area):
 	if area.is_in_group("clients"):
 		Global.add_score(100)
 		queue_free()
-	if area.is_in_group("left_wall"):
+	
+		
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.is_in_group("left_wall"):
 		Global.break_life(1)
 		$AudioStreamPlayer.play()
 		queue_free()
+
 		
 
 	

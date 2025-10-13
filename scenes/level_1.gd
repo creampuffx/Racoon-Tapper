@@ -30,6 +30,7 @@ func _physics_process(delta):
 
 
 func _on_wall_area_entered(area: Area2D) -> void:
-	$glass_break.play()
-	Global.break_life(1)
+	if area.is_in_group("clients"):
+		$glass_break.play()
+		Global.break_life(1)
 	

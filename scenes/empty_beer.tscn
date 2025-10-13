@@ -6,13 +6,14 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3f2jf"]
 size = Vector2(29, 27)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_wyb4x"]
-radius = 13.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wyb4x"]
+size = Vector2(35.107597, 31.221094)
 
 [node name="empty beer" type="CharacterBody2D"]
 z_index = 2
 scale = Vector2(1.8877169, 1.8156413)
-collision_layer = 37
+collision_layer = 32
+collision_mask = 64
 script = ExtResource("1_3f2jf")
 lifespan = 12
 
@@ -27,10 +28,12 @@ shape = SubResource("RectangleShape2D_3f2jf")
 
 [node name="Area2D" type="Area2D" parent="."]
 scale = Vector2(1.4938165, 1.6582488)
-collision_layer = 50
-collision_mask = 8
+collision_layer = 32
+collision_mask = 64
+priority = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_wyb4x")
+position = Vector2(-1.5957998, -0.332139)
+shape = SubResource("RectangleShape2D_wyb4x")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

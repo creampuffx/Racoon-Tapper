@@ -163,13 +163,14 @@ offset_top = 2.0
 offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(1.679993, 1.6745477)
+scale = Vector2(1.6463282, 1.613727)
 script = ExtResource("1_ihen6")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
 offset_right = 1147.0
 offset_bottom = 642.0
+scale = Vector2(0.6100592, 0.62318224)
 color = Color(0.91552997, 0.819612, 0.6877281, 1)
 
 [node name="Panel" type="Panel" parent="."]
@@ -198,7 +199,7 @@ offset_left = 14.0
 offset_top = 29.0
 offset_right = 400.0
 offset_bottom = 245.33333
-scale = Vector2(3, 3)
+scale = Vector2(1.8301777, 1.8695467)
 texture = ExtResource("3_ih3ue")
 stretch_mode = 1
 
@@ -209,12 +210,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -691.5465
-offset_top = -427.7309
-offset_right = -43.54651
-offset_bottom = -149.2309
+offset_left = -408.35422
+offset_top = -221.75221
+offset_right = 239.64575
+offset_bottom = 56.747803
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.5647313, 0.5605443)
 theme = SubResource("Theme_ekxnf")
 
 [node name="Button" type="Button" parent="VBoxContainer"]
@@ -283,10 +285,10 @@ text = "Exit"
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_left = -468.4543
-offset_top = 397.71933
-offset_right = -255.75977
-offset_bottom = 653.86426
+offset_left = 95.9711
+offset_top = 293.1103
+offset_right = -499.02893
+offset_bottom = 384.1103
 grow_horizontal = 2
 rotation = -0.0022131763
 theme = SubResource("Theme_qe12f")
@@ -294,7 +296,7 @@ theme_override_colors/font_color = Color(0.8039216, 0.6627451, 0.4627451, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
-theme_override_font_sizes/font_size = 165
+theme_override_font_sizes/font_size = 90
 text = "Racoon Tapper"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -305,22 +307,16 @@ autoplay = true
 max_polyphony = 2
 
 [node name="Label" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -748.09436
-offset_top = -667.3512
-offset_right = 41.90564
-offset_bottom = -635.3512
-grow_horizontal = 2
-grow_vertical = 0
+layout_mode = 0
+offset_left = 97.18597
+offset_top = 270.182
+offset_right = 887.186
+offset_bottom = 302.182
+scale = Vector2(0.8982167, 0.8731093)
 theme_override_colors/font_color = Color(0.8039216, 0.6627451, 0.4627451, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("3_l1ni3")
-theme_override_font_sizes/font_size = 31
+theme_override_font_sizes/font_size = 24
 text = "use wasd to move and press P to \"shoot\" drinks at the clients"
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]

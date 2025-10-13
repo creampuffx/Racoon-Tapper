@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=4 uid="uid://bbvi7bqkurtbo"]
+[gd_scene load_steps=42 format=4 uid="uid://bbvi7bqkurtbo"]
 
 [ext_resource type="Script" uid="uid://b8ag6qlhb3sfq" path="res://scenes/level_1.gd" id="1_kvult"]
 [ext_resource type="Texture2D" uid="uid://bv0c2ao5p52oj" path="res://assets/Modern tiles_Free/Interiors_free/48x48/Room_Builder_free_48x48.png" id="2_kf3d8"]
@@ -12,7 +12,6 @@
 [ext_resource type="AudioStream" uid="uid://dpkek6eti1byy" path="res://assets/track 3.wav" id="9_2sj2h"]
 [ext_resource type="Script" uid="uid://unx8rbywpsfv" path="res://scenes/lives.gd" id="10_bsmkr"]
 [ext_resource type="Texture2D" uid="uid://pamyytouhyyn" path="res://images2/red-pixel-heart-2.png" id="11_3pdoh"]
-[ext_resource type="PackedScene" uid="uid://bsqqwuij0i8co" path="res://scenes/empty_beer.tscn" id="12_3pdoh"]
 [ext_resource type="AudioStream" uid="uid://d30pnauwfbyvk" path="res://assets/glass-bottle-breaking-351297.mp3" id="13_hc45n"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o16nf"]
@@ -3337,7 +3336,7 @@ radius = 11.996474
 height = 25.992935
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
-size = Vector2(75, 148.5)
+size = Vector2(91, 148.5)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_kvult"]
 a = Vector2(-10.020042, 1490.0221)
@@ -3362,7 +3361,7 @@ b = Vector2(1933.8677, 1538.8027)
 size = Vector2(2219.6016, 149.06406)
 
 [node name="level 1" type="Node2D"]
-scale = Vector2(0.8348344, 0.7513546)
+scale = Vector2(0.50081676, 0.45138228)
 script = ExtResource("1_kvult")
 
 [node name="Layer0" type="TileMapLayer" parent="."]
@@ -3453,16 +3452,13 @@ shape = SubResource("RectangleShape2D_g2els")
 [node name="StaticBody2D5" type="StaticBody2D" parent="."]
 
 [node name="left wall" type="CollisionShape2D" parent="StaticBody2D5" groups=["left_wall"]]
-visible = false
 position = Vector2(17.967636, 0)
 shape = SubResource("SegmentShape2D_kvult")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
-visible = false
 shape = SubResource("SegmentShape2D_1uqwn")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D5"]
-visible = false
 shape = SubResource("SegmentShape2D_2sj2h")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D5"]
@@ -3486,8 +3482,8 @@ script = ExtResource("6_kvult")
 metadata/_edit_use_anchors_ = true
 
 [node name="wall" type="Area2D" parent="." groups=["walls"]]
-collision_layer = 8
-collision_mask = 20
+collision_layer = 72
+collision_mask = 52
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wall"]
 position = Vector2(177.28067, 131.76202)
@@ -3502,21 +3498,18 @@ autoplay = true
 [node name="tp1" type="Area2D" parent="teleport"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="teleport/tp1"]
-visible = false
 position = Vector2(1096.6246, 782.58655)
 shape = SubResource("RectangleShape2D_2sj2h")
 
 [node name="tp2" type="Area2D" parent="teleport"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="teleport/tp2"]
-visible = false
 position = Vector2(1096.0258, 1062.0818)
 shape = SubResource("RectangleShape2D_2sj2h")
 
 [node name="tp3" type="Area2D" parent="teleport"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="teleport/tp3"]
-visible = false
 position = Vector2(1096.0258, 1350.8934)
 shape = SubResource("RectangleShape2D_2sj2h")
 
@@ -3552,8 +3545,6 @@ texture = ExtResource("11_3pdoh")
 
 [node name="glass_break" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_hc45n")
-
-[node name="empty beer" parent="." instance=ExtResource("12_3pdoh")]
 
 [connection signal="timeout" from="Spawn/Timer" to="Spawn" method="_on_timer_timeout"]
 [connection signal="area_entered" from="player/collect" to="." method="_on_collect_area_entered"]

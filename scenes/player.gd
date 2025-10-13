@@ -37,3 +37,8 @@ func shoot():
 		b = bullet.instantiate()
 		get_parent().add_child(b)
 		b.global_position = $Marker2D.global_position
+
+
+
+func _on_collect_body_entered(body):
+	body.queue_free()

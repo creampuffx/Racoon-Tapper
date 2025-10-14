@@ -19,16 +19,16 @@ script = ExtResource("1_3f2jf")
 lifespan = 20
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(1.4938165, 1.6582488)
+scale = Vector2(1.8569931, 2.1250863)
 texture = ExtResource("1_2geu6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 0.5)
-scale = Vector2(1.4938165, 1.6582488)
+scale = Vector2(1.8569931, 2.1250863)
 shape = SubResource("RectangleShape2D_3f2jf")
 
 [node name="Area2D" type="Area2D" parent="." groups=["empty drink"]]
-scale = Vector2(1.4938165, 1.6582488)
+scale = Vector2(1.8569931, 2.1250863)
 collision_layer = 32
 collision_mask = 64
 

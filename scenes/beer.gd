@@ -18,8 +18,10 @@ func _on_area_2d_area_entered(area):
 		
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("left_wall"):
+		$Sprite2D.hide()
+		$glass_break.play()
 		Global.break_life(1)
-		$AudioStreamPlayer.play()
+		await get_tree().create_timer(0.5).timeout 
 		queue_free()
 
 		

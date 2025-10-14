@@ -19,9 +19,11 @@ func shoot():
 
 func _on_hurt_box_area_entered(area):
 	if area.is_in_group("drink-not-empty"):
+		$drink_sound.play() 
 		shoot()
+		await get_tree().create_timer(0.1).timeout
 		queue_free()
-	if area.is_in_group("walls"):
+	elif area.is_in_group("walls"):
 		queue_free()
 		
 	

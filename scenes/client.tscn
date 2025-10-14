@@ -1,18 +1,54 @@
-[gd_scene load_steps=8 format=3 uid="uid://dl8dl8j7gem6y"]
+[gd_scene load_steps=14 format=3 uid="uid://dl8dl8j7gem6y"]
 
 [ext_resource type="Script" uid="uid://d4bxg5gui81on" path="res://scenes/client.gd" id="1_1t5vp"]
-[ext_resource type="Texture2D" uid="uid://dno74dnikbjqg" path="res://assets/Modern tiles_Free/Characters_free/Alex_idle_16x16.png" id="1_5f806"]
+[ext_resource type="Texture2D" uid="uid://btx2gnvsa7v7o" path="res://assets/Modern tiles_Free/Characters_free/Alex_idle_anim_16x16.png" id="2_r26j7"]
 [ext_resource type="AudioStream" uid="uid://d30pnauwfbyvk" path="res://assets/glass-bottle-breaking-351297.mp3" id="3_4tr0r"]
+[ext_resource type="AudioStream" uid="uid://dvaqcy2l5i2if" path="res://assets/Bubble 1.wav" id="4_r26j7"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kvult"]
-atlas = ExtResource("1_5f806")
-region = Rect2(48, 0, 16, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0ykn"]
+atlas = ExtResource("2_r26j7")
+region = Rect2(288, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_da3od"]
+atlas = ExtResource("2_r26j7")
+region = Rect2(304, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dipmf"]
+atlas = ExtResource("2_r26j7")
+region = Rect2(320, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5q6u5"]
+atlas = ExtResource("2_r26j7")
+region = Rect2(336, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_umycy"]
+atlas = ExtResource("2_r26j7")
+region = Rect2(352, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7rsog"]
+atlas = ExtResource("2_r26j7")
+region = Rect2(368, 0, 16, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1uqwn"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_kvult")
+"texture": SubResource("AtlasTexture_t0ykn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_da3od")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dipmf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5q6u5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_umycy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7rsog")
 }],
 "loop": true,
 "name": &"default",
@@ -39,6 +75,7 @@ speed = 5
 position = Vector2(0, -40)
 scale = Vector2(6, 5.796874)
 sprite_frames = SubResource("SpriteFrames_1uqwn")
+autoplay = "default"
 
 [node name="HurtBox" type="Area2D" parent="." groups=["clients"]]
 position = Vector2(243, 149)
@@ -59,5 +96,10 @@ position = Vector2(0, 30)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_4tr0r")
+
+[node name="drink_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_r26j7")
+volume_db = 8.656
+pitch_scale = 1.23
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]

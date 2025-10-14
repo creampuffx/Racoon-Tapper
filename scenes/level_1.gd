@@ -33,5 +33,6 @@ func _on_wall_area_entered(area: Area2D) -> void:
 
 func _on_collect_body_entered(body: Node2D) -> void:
 	if body.is_in_group("empty drink"):
+		$collect_sound.play()
 		Global.add_score(50)
 		body.queue_free()

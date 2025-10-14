@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dd5raw8mle1yo"]
+[gd_scene load_steps=28 format=3 uid="uid://dd5raw8mle1yo"]
 
 [ext_resource type="Script" uid="uid://queic38y74ch" path="res://scenes/game_over.gd" id="1_hnr1f"]
 [ext_resource type="FontFile" uid="uid://b1jcjir01uihm" path="res://assets/KiwiSoda.ttf" id="1_y1imj"]
@@ -154,6 +154,8 @@ corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
+[sub_resource type="MeshTexture" id="MeshTexture_vpbcb"]
+
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -179,13 +181,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -671.0
-offset_top = 16.0
-offset_right = -473.99997
-offset_bottom = 58.0
+offset_left = -491.0
+offset_top = -1.0
+offset_right = -314.1117
+offset_bottom = 41.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(3.3863173, 4.3850365)
+scale = Vector2(2.6074624, 3.1005518)
 size_flags_vertical = 3
 theme = SubResource("Theme_hnr1f")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -213,10 +215,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -875.9999
-offset_top = -412.0
-offset_right = -50.999878
-offset_bottom = -155.8551
+offset_left = -887.00006
+offset_top = -266.0
+offset_right = -62.00006
+offset_bottom = -100.0
 grow_horizontal = 2
 grow_vertical = 2
 rotation = -0.0022131763
@@ -225,7 +227,7 @@ theme = SubResource("Theme_lrid3")
 theme_override_colors/font_color = Color(0.8039216, 0.6627451, 0.4627451, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 165
+theme_override_font_sizes/font_size = 98
 text = "GAME OVER"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -233,10 +235,10 @@ vertical_alignment = 1
 [node name="score" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.35984364
-anchor_top = 0.69452655
-anchor_right = 0.35984364
-anchor_bottom = 0.69452655
+anchor_left = 0.23602414
+anchor_top = 0.63902575
+anchor_right = 0.23602417
+anchor_bottom = 0.63902575
 offset_left = 50.1002
 offset_top = 39.91131
 offset_right = 494.99
@@ -245,8 +247,6 @@ theme_override_colors/font_color = Color(0.6567116, 0.52288854, 0.32987076, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_y1imj")
 theme_override_font_sizes/font_size = 100
-text = "
-"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("3_vpbcb")
@@ -255,11 +255,11 @@ metadata/_edit_use_anchors_ = true
 [node name="Button2" type="Button" parent="."]
 clip_contents = true
 layout_mode = 0
-offset_left = 1063.0
-offset_top = 556.00006
-offset_right = 1182.5256
-offset_bottom = 626.8261
-scale = Vector2(3.9692016, 2.451941)
+offset_left = 606.0
+offset_top = 323.0
+offset_right = 725.52563
+offset_bottom = 376.42703
+scale = Vector2(3.6601057, 2.451941)
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
@@ -276,6 +276,7 @@ theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_8s0qq")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_6kvst")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_bwjhm")
 text = "exit"
+icon = SubResource("MeshTexture_vpbcb")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

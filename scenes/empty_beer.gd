@@ -11,9 +11,9 @@ func _physics_process(delta: float) -> void:
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("walls"):
 		queue_free()
-	if area.is_in_group("player"):
-		print ("collected")
-		queue_free()
+		
+
+		
 		
 
 

@@ -7,7 +7,7 @@ var health = 1
 
 	
 func _physics_process(delta: float) -> void:
-	velocity.x += speed * delta
+	velocity.x += speed * 1 * delta
 	move_and_slide()
 	
 	
@@ -23,6 +23,8 @@ func _on_hurt_box_area_entered(area):
 		queue_free()
 	if area.is_in_group("walls"):
 		queue_free()
+		
+	
 
 
 

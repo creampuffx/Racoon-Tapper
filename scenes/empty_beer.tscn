@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bsqqwuij0i8co"]
+[gd_scene load_steps=6 format=3 uid="uid://bsqqwuij0i8co"]
 
 [ext_resource type="Texture2D" uid="uid://cmdf0fusftubx" path="res://assets/Empty cup 2.png" id="1_2geu6"]
 [ext_resource type="Script" uid="uid://c1jry88qxsqhf" path="res://scenes/empty_beer.gd" id="1_3f2jf"]
+[ext_resource type="AudioStream" uid="uid://d30pnauwfbyvk" path="res://assets/glass-bottle-breaking-351297.mp3" id="3_wyb4x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3f2jf"]
 size = Vector2(29, 27)
@@ -9,13 +10,13 @@ size = Vector2(29, 27)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wyb4x"]
 size = Vector2(35.107597, 31.221094)
 
-[node name="empty beer" type="CharacterBody2D"]
-z_index = 2
-scale = Vector2(1.8877169, 1.8156413)
+[node name="empty beer" type="CharacterBody2D" groups=["empty drink"]]
+z_index = 4
+scale = Vector2(1.3968672, 1.3394935)
 collision_layer = 32
 collision_mask = 64
 script = ExtResource("1_3f2jf")
-lifespan = 12
+lifespan = 20
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(1.4938165, 1.6582488)
@@ -26,14 +27,16 @@ position = Vector2(0.5, 0.5)
 scale = Vector2(1.4938165, 1.6582488)
 shape = SubResource("RectangleShape2D_3f2jf")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=["empty drink"]]
 scale = Vector2(1.4938165, 1.6582488)
 collision_layer = 32
 collision_mask = 64
-priority = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-1.5957998, -0.332139)
 shape = SubResource("RectangleShape2D_wyb4x")
+
+[node name="glassbreak" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_wyb4x")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

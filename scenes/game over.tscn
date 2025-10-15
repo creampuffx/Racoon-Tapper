@@ -193,7 +193,7 @@ theme = SubResource("Theme_hnr1f")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
 theme_override_fonts/font = ExtResource("1_y1imj")
-theme_override_font_sizes/font_size = 41
+theme_override_font_sizes/font_size = 34
 theme_override_styles/normal = SubResource("StyleBoxFlat_vpbcb")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_uf7vp")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_kgv2q")
@@ -255,16 +255,16 @@ metadata/_edit_use_anchors_ = true
 [node name="Button2" type="Button" parent="."]
 clip_contents = true
 layout_mode = 0
-offset_left = 606.0
+offset_left = 578.0
 offset_top = 323.0
-offset_right = 725.52563
+offset_right = 721.1653
 offset_bottom = 376.42703
 scale = Vector2(3.6601057, 2.451941)
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
 theme_override_fonts/font = ExtResource("1_y1imj")
-theme_override_font_sizes/font_size = 41
+theme_override_font_sizes/font_size = 31
 theme_override_styles/normal = SubResource("StyleBoxFlat_bgmfq")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_lrid3")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_krxk1")
@@ -275,7 +275,8 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_6diga")
 theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_8s0qq")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_6kvst")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_bwjhm")
-text = "exit"
+text = "main menu
+"
 icon = SubResource("MeshTexture_vpbcb")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

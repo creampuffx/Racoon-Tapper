@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var bullet = preload("res://scenes/beer.tscn")
 var b 
 const acc = 500
+var can_shoot
 
 func _psychics_process (delta):
 	
@@ -24,6 +25,11 @@ func _psychics_process (delta):
 		
 	move_and_slide()
 
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	can_shoot = 1
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	can_shoot = 0
+
 func _physics_process(delta):
 	_psychics_process(delta)
 	move_and_slide()
@@ -34,6 +40,8 @@ func accelerate(direction):
 
 func shoot(): 
 	if Input.is_action_just_pressed("put"):
-		b = bullet.instantiate()
-		get_parent().add_child(b)
-		b.global_position = $Marker2D.global_position
+		if can_shoot == 1:
+			b = bullet.instantiate()
+			get_parent().add_child(b)
+			b.global_position = $Marker2D.global_position
+		

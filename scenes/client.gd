@@ -4,6 +4,8 @@ var health = 1
 @onready var bullet = preload("res://scenes/empty_beer.tscn")
 @onready var empty_beer_position: Marker2D = $empty_beer_position
 var direction = -1
+@onready var how_much = [1, 1, 2]
+@onready var beer_amount = how_much[randi() % how_much.size()]
 
 @onready var client_look = [
 	"client1",
@@ -32,18 +34,37 @@ func shoot():
 
 func _on_hurt_box_area_entered(area):
 	if area.is_in_group("drink-not-empty"):
-		$drink_sound.play() 
-		velocity.x = 0
-		velocity.x += speed * -1 * 30
-		$Sprite2D.show()
-		move_and_slide()
-		$HurtBox.queue_free()
-		await get_tree().create_timer(2).timeout
-		shoot()
-		queue_free()
+		handle_drink()
 	elif area.is_in_group("walls"):
 		queue_free()
 		
+		
+func handle_drink():
+	if beer_amount == 1:
+		$HurtBox.monitoring = true
+		$Sprite2D.show() 
+		$drink_sound.play()
+		velocity.x = 0
+		velocity.x += speed * -1 * 30
+		move_and_slide()
+		$HurtBox.monitoring = false
+		await get_tree().create_timer(3).timeout
+		queue_free()
+	elif beer_amount == 2:
+		$Sprite2D.show() 
+		$drink_sound.play()
+		velocity.x = 0
+		velocity.x += speed * -1 * 30
+		move_and_slide()
+		$HurtBox.monitoring = false
+		await get_tree().create_timer(2).timeout
+		shoot()
+		$Sprite2D.hide()
+		$HurtBox.monitoring = true
+		velocity.x += speed * 1 * 30
+		move_and_slide()
+		beer_amount -= 1
+		return
 	
 
 

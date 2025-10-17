@@ -1,0 +1,109 @@
+[gd_scene load_steps=5 format=3 uid="uid://buqnrfqmssnu4"]
+
+[ext_resource type="Script" uid="uid://cbfpa80gnyeti" path="res://control.gd" id="1_c00ax"]
+[ext_resource type="FontFile" uid="uid://b1jcjir01uihm" path="res://assets/KiwiSoda.ttf" id="2_r7su1"]
+[ext_resource type="Texture2D" uid="uid://cmdf0fusftubx" path="res://assets/Empty cup 2.png" id="3_c6be6"]
+[ext_resource type="Texture2D" uid="uid://dno74dnikbjqg" path="res://assets/Modern tiles_Free/Characters_free/Alex_idle_16x16.png" id="4_i2hxp"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c00ax")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 6.0
+offset_right = 1149.0
+offset_bottom = 157.0
+theme_override_fonts/font = ExtResource("2_r7su1")
+theme_override_font_sizes/font_size = 73
+text = "Clear all customers 
+to advance to the next level"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 480.4568
+offset_top = 198.48111
+offset_right = 798.4568
+offset_bottom = 265.4811
+theme_override_fonts/font = ExtResource("2_r7su1")
+theme_override_font_sizes/font_size = 66
+text = "1OO POINTS"
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 0
+offset_left = 485.4568
+offset_top = 300.4811
+offset_right = 770.4568
+offset_bottom = 367.4811
+theme_override_fonts/font = ExtResource("2_r7su1")
+theme_override_font_sizes/font_size = 66
+text = "50 POINTS"
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 394.4568
+offset_top = 460.4811
+offset_right = 434.4568
+offset_bottom = 483.4811
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(394.4568, 328.48114)
+scale = Vector2(2.7441108, 2.747726)
+texture = ExtResource("3_c6be6")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(387.45676, 218.48112)
+scale = Vector2(4.9320927, 4.3896627)
+texture = ExtResource("4_i2hxp")
+region_enabled = true
+region_rect = Rect2(47.46414, 8.104681, 16.535858, 23.895319)
+
+[node name="Label5" type="Label" parent="."]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 406.0
+offset_right = 1156.0
+offset_bottom = 452.0
+theme_override_fonts/font = ExtResource("2_r7su1")
+theme_override_font_sizes/font_size = 44
+text = "use wasd to move and press P to \"shoot\" drinks at the clients"
+
+[node name="Label6" type="Label" parent="."]
+layout_mode = 0
+offset_left = -312.0
+offset_top = 473.0
+offset_right = 1471.0
+offset_bottom = 564.0
+theme_override_colors/font_color = Color(0.7303044, 0.59415746, 0.47057772, 1)
+theme_override_fonts/font = ExtResource("2_r7su1")
+theme_override_font_sizes/font_size = 44
+text = "some clients will want more than one drink and they will 
+return the empty cup. Watch out for them!"
+horizontal_alignment = 1
+
+[node name="play" type="Button" parent="."]
+layout_mode = 0
+offset_left = 473.0
+offset_top = 578.0
+offset_right = 683.0
+offset_bottom = 630.0
+theme_override_fonts/font = ExtResource("2_r7su1")
+theme_override_font_sizes/font_size = 36
+text = "PLAY"
+
+[connection signal="pressed" from="play" to="." method="_on_play_pressed"]

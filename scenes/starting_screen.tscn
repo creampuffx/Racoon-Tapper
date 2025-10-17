@@ -324,7 +324,6 @@ theme_override_colors/font_color = Color(0.8039216, 0.6627451, 0.4627451, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("3_l1ni3")
 theme_override_font_sizes/font_size = 24
-text = "use wasd to move and press P to \"shoot\" drinks at the clients"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(86.25255, 179.7082)
@@ -341,6 +340,7 @@ region_enabled = true
 region_rect = Rect2(17.5, 4, 27, 35)
 
 [node name="Options" type="Panel" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 152.46048
 offset_top = 44.61721

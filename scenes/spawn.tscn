@@ -5,10 +5,6 @@
 [node name="Spawn" type="Node2D"]
 script = ExtResource("1_auhge")
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 1.479
-autostart = true
-
 [node name="door1" type="Marker2D" parent="."]
 position = Vector2(50, 521)
 
@@ -17,5 +13,3 @@ position = Vector2(49, 805)
 
 [node name="door3" type="Marker2D" parent="."]
 position = Vector2(48, 1097)
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -209,7 +209,6 @@ scale = Vector2(1.8301777, 1.8695467)
 texture = ExtResource("3_ih3ue")
 
 [node name="Main_buttons" type="VBoxContainer" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -291,10 +290,10 @@ text = "Exit"
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_left = 82.000656
-offset_top = 295.58902
-offset_right = -512.9993
-offset_bottom = 386.58902
+offset_left = 77.14136
+offset_top = 276.37885
+offset_right = -517.85864
+offset_bottom = 367.37885
 grow_horizontal = 2
 rotation = -0.0022131763
 theme = SubResource("Theme_qe12f")
@@ -327,6 +326,7 @@ theme_override_font_sizes/font_size = 24
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(86.25255, 179.7082)
+rotation = -0.31721723
 scale = Vector2(9.115439, 7.3919435)
 texture = ExtResource("3_ih3ue")
 region_enabled = true
@@ -334,6 +334,7 @@ region_rect = Rect2(17.5, 4, 27, 35)
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 position = Vector2(587.3677, 178.46886)
+rotation = 0.22021715
 scale = Vector2(9.115439, 7.3919435)
 texture = ExtResource("3_ih3ue")
 region_enabled = true

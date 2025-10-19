@@ -6,6 +6,8 @@ var health = 1
 var direction = -1
 @onready var how_much = [1, 1, 2]
 @onready var beer_amount = how_much[randi() % how_much.size()]
+signal client_satisfied
+
 
 @onready var client_look = [
 	"client1",
@@ -49,7 +51,7 @@ func handle_drink():
 		move_and_slide()
 		$HurtBox.monitoring = false
 		await get_tree().create_timer(3).timeout
-		queue_free()
+		_DIE()
 	elif beer_amount == 2:
 		$Sprite2D.show() 
 		$drink_sound.play()
@@ -65,8 +67,8 @@ func handle_drink():
 		move_and_slide()
 		beer_amount -= 1
 		return
-	
-
-
-	
-	
+		
+		
+func _DIE():
+	Global.clients_alive -= 1
+	queue_free()

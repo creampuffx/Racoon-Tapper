@@ -31,9 +31,10 @@ offset_top = 6.0
 offset_right = 1149.0
 offset_bottom = 157.0
 theme_override_fonts/font = ExtResource("2_r7su1")
-theme_override_font_sizes/font_size = 73
-text = "Clear all customers 
-to advance to the next level"
+theme_override_font_sizes/font_size = 54
+text = "Clear all customers  to advance to the next level 
+(i made level 2 extra long cause 
+there is no more levels)"
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="."]
@@ -87,15 +88,16 @@ text = "use wasd to move and press P to \"shoot\" drinks at the clients"
 
 [node name="Label6" type="Label" parent="."]
 layout_mode = 0
-offset_left = -312.0
-offset_top = 473.0
-offset_right = 1471.0
-offset_bottom = 564.0
+offset_left = -310.0
+offset_top = 455.0
+offset_right = 1473.0
+offset_bottom = 566.0
 theme_override_colors/font_color = Color(0.7303044, 0.59415746, 0.47057772, 1)
 theme_override_fonts/font = ExtResource("2_r7su1")
-theme_override_font_sizes/font_size = 44
-text = "some clients will want more than one drink and they will 
-return the empty cup. Watch out for them!"
+theme_override_font_sizes/font_size = 34
+text = "some clients will want more than one drink and they will return the empty cup.
+ Watch out for them! 
+(catch them with left/right movement)"
 horizontal_alignment = 1
 
 [node name="play" type="Button" parent="."]
@@ -111,7 +113,6 @@ text = "PLAY"
 [node name="bgmusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_r7su1")
 autoplay = true
-stream_paused = true
 bus = &"Music"
 
 [connection signal="pressed" from="play" to="." method="_on_play_pressed"]

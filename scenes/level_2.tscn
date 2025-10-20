@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=4 uid="uid://dc8ksoiqjdffu"]
+[gd_scene load_steps=49 format=4 uid="uid://dc8ksoiqjdffu"]
 
 [ext_resource type="Script" uid="uid://skhhasnv7unh" path="res://scenes/level_2.gd" id="1_guvtl"]
 [ext_resource type="AudioStream" uid="uid://dpkek6eti1byy" path="res://assets/track 3.wav" id="2_igmy8"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://cirft3lyh27sy" path="res://scenes/score.gd" id="10_vwfin"]
 [ext_resource type="Script" uid="uid://unx8rbywpsfv" path="res://scenes/lives.gd" id="11_63d2t"]
 [ext_resource type="Texture2D" uid="uid://pamyytouhyyn" path="res://images2/red-pixel-heart-2.png" id="12_va6c3"]
+[ext_resource type="Texture2D" uid="uid://dno74dnikbjqg" path="res://assets/Modern tiles_Free/Characters_free/Alex_idle_16x16.png" id="13_igmy8"]
 [ext_resource type="AudioStream" uid="uid://d30pnauwfbyvk" path="res://assets/glass-bottle-breaking-351297.mp3" id="13_pc3at"]
 [ext_resource type="AudioStream" uid="uid://d2urt0qg2x4e2" path="res://assets/Fruit collect 1.wav" id="14_bgibu"]
 [ext_resource type="AudioStream" uid="uid://dvaqcy2l5i2if" path="res://assets/Bubble 1.wav" id="15_73m23"]
@@ -3374,6 +3375,8 @@ gradient = SubResource("Gradient_guvtl")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
+[sub_resource type="Theme" id="Theme_wdtqu"]
+
 [node name="level 2" type="Node2D"]
 modulate = Color(0.6348793, 0.7190428, 0.9652515, 1)
 scale = Vector2(0.50086206, 0.44925314)
@@ -3531,22 +3534,6 @@ shape = SubResource("SegmentShape2D_63d2t")
 position = Vector2(2252.3208, 952.62933)
 shape = SubResource("RectangleShape2D_va6c3")
 
-[node name="score" type="Label" parent="."]
-offset_left = 50.1002
-offset_top = 39.91131
-offset_right = 494.99
-offset_bottom = 242.91132
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("9_vhnap")
-theme_override_font_sizes/font_size = 100
-text = "
-"
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("10_vwfin")
-metadata/_edit_use_anchors_ = true
-
 [node name="wall" type="Area2D" parent="." groups=["walls"]]
 collision_layer = 72
 collision_mask = 52
@@ -3587,24 +3574,6 @@ scale = Vector2(0.52388114, 0.5622761)
 position = Vector2(2150.487, 1333.681)
 scale = Vector2(0.52388114, 0.5622761)
 
-[node name="lives" type="Node2D" parent="."]
-script = ExtResource("11_63d2t")
-
-[node name="live1" type="Sprite2D" parent="lives"]
-position = Vector2(1721.4722, 187.66107)
-scale = Vector2(0.22026633, 0.21835566)
-texture = ExtResource("12_va6c3")
-
-[node name="live2" type="Sprite2D" parent="lives"]
-position = Vector2(1890.7402, 182.52513)
-scale = Vector2(0.22026633, 0.21835566)
-texture = ExtResource("12_va6c3")
-
-[node name="live3" type="Sprite2D" parent="lives"]
-position = Vector2(2061.4866, 188.992)
-scale = Vector2(0.22026633, 0.21835566)
-texture = ExtResource("12_va6c3")
-
 [node name="glass_break" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_pc3at")
 bus = &"SFX"
@@ -3644,20 +3613,85 @@ color = Color(0.38495365, 0.90450495, 0.7307865, 1)
 blend_mode = 1
 max_distance = 157.0
 
+[node name="ColorRect3" type="ColorRect" parent="."]
+offset_left = 345.67957
+offset_top = 73.108765
+offset_right = 2171.1104
+offset_bottom = 354.46674
+theme = SubResource("Theme_wdtqu")
+color = Color(0.65882355, 0.37254903, 0.27450982, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = 357.8087
+offset_top = 86.40127
+offset_right = 2161.0027
+offset_bottom = 332.31256
+theme = SubResource("Theme_wdtqu")
+color = Color(0.7921569, 0.53333336, 0.32941177, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="."]
+offset_left = 367.91626
+offset_top = 93.04752
+offset_right = 2150.8953
+offset_bottom = 323.4509
+theme = SubResource("Theme_wdtqu")
+color = Color(0.22745098, 0.22745098, 0.3137255, 1)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(1055.7561, 204.9261)
+scale = Vector2(8.656942, 8.380055)
+texture = ExtResource("13_igmy8")
+region_enabled = true
+region_rect = Rect2(47.46414, 8.104681, 16.535858, 23.895319)
+
+[node name="score" type="Label" parent="."]
+offset_left = 511.44406
+offset_top = 161.72543
+offset_right = 1473.4441
+offset_bottom = 467.72543
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_vhnap")
+theme_override_font_sizes/font_size = 100
+text = "for i in range (amount):
+		print (i)
+"
+script = ExtResource("10_vwfin")
+metadata/_edit_use_anchors_ = true
+
 [node name="clients_to_serve" type="Label" parent="."]
-offset_left = 576.1327
-offset_top = 39.877506
-offset_right = 1021.02246
-offset_bottom = 242.8775
+offset_left = 1134.0714
+offset_top = 117.4171
+offset_right = 1578.961
+offset_bottom = 320.4171
+rotation = 0.009190072
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("9_vhnap")
 theme_override_font_sizes/font_size = 100
 text = "
-"
-horizontal_alignment = 1
+zsfdxfcg"
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="lives" type="Node2D" parent="."]
+position = Vector2(-14.150626, 22.154171)
+script = ExtResource("11_63d2t")
+
+[node name="live1" type="Sprite2D" parent="lives"]
+position = Vector2(1721.4722, 187.66107)
+scale = Vector2(0.22026633, 0.21835566)
+texture = ExtResource("12_va6c3")
+
+[node name="live2" type="Sprite2D" parent="lives"]
+position = Vector2(1892.5908, 190.32292)
+scale = Vector2(0.22026633, 0.21835566)
+texture = ExtResource("12_va6c3")
+
+[node name="live3" type="Sprite2D" parent="lives"]
+position = Vector2(2061.4866, 188.992)
+scale = Vector2(0.22026633, 0.21835566)
+texture = ExtResource("12_va6c3")
 
 [connection signal="timeout" from="Spawn2/Timer" to="Spawn2" method="_on_timer_timeout"]
 [connection signal="body_entered" from="player/collect" to="." method="_on_collect_body_entered"]

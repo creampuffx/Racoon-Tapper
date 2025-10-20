@@ -3423,6 +3423,70 @@ offset_bottom = 332.31256
 theme = SubResource("Theme_mlye1")
 color = Color(0.7921569, 0.53333336, 0.32941177, 1)
 
+[node name="ColorRect4" type="ColorRect" parent="."]
+offset_left = 367.91626
+offset_top = 93.04752
+offset_right = 2150.8953
+offset_bottom = 323.4509
+theme = SubResource("Theme_mlye1")
+color = Color(0.22745098, 0.22745098, 0.3137255, 1)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(1055.7561, 204.9261)
+scale = Vector2(8.656942, 8.380055)
+texture = ExtResource("16_m7v2g")
+region_enabled = true
+region_rect = Rect2(47.46414, 8.104681, 16.535858, 23.895319)
+
+[node name="score" type="Label" parent="."]
+offset_left = 511.44406
+offset_top = 161.72543
+offset_right = 1473.4441
+offset_bottom = 467.72543
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_1uqwn")
+theme_override_font_sizes/font_size = 100
+text = "for i in range (amount):
+		print (i)
+"
+script = ExtResource("6_kvult")
+metadata/_edit_use_anchors_ = true
+
+[node name="clients_to_serve" type="Label" parent="."]
+offset_left = 1134.0714
+offset_top = 117.4171
+offset_right = 1578.961
+offset_bottom = 320.4171
+rotation = 0.009190072
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_1uqwn")
+theme_override_font_sizes/font_size = 100
+text = "
+zsfdxfcg"
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="lives" type="Node2D" parent="."]
+position = Vector2(-14.150626, 22.154171)
+script = ExtResource("10_bsmkr")
+
+[node name="live1" type="Sprite2D" parent="lives"]
+position = Vector2(1721.4722, 187.66107)
+scale = Vector2(0.22026633, 0.21835566)
+texture = ExtResource("11_3pdoh")
+
+[node name="live2" type="Sprite2D" parent="lives"]
+position = Vector2(1892.5908, 190.32292)
+scale = Vector2(0.22026633, 0.21835566)
+texture = ExtResource("11_3pdoh")
+
+[node name="live3" type="Sprite2D" parent="lives"]
+position = Vector2(2061.4866, 188.992)
+scale = Vector2(0.22026633, 0.21835566)
+texture = ExtResource("11_3pdoh")
+
 [node name="client" parent="." instance=ExtResource("6_ow2ny")]
 position = Vector2(50.100204, 554.32367)
 collision_layer = 8
@@ -3515,35 +3579,6 @@ shape = SubResource("SegmentShape2D_2sj2h")
 position = Vector2(2252.3208, 952.62933)
 shape = SubResource("RectangleShape2D_dqu65")
 
-[node name="score" type="Label" parent="."]
-offset_left = 511.44406
-offset_top = 161.72543
-offset_right = 956.33386
-offset_bottom = 364.72543
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("7_1uqwn")
-theme_override_font_sizes/font_size = 100
-text = "sdfgf
-"
-script = ExtResource("6_kvult")
-metadata/_edit_use_anchors_ = true
-
-[node name="clients_to_serve" type="Label" parent="."]
-offset_left = 1134.0715
-offset_top = 117.41709
-offset_right = 1578.9612
-offset_bottom = 320.41708
-rotation = 0.009190072
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("7_1uqwn")
-theme_override_font_sizes/font_size = 100
-text = "
-zsfdxfcg"
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
-
 [node name="wall" type="Area2D" parent="." groups=["walls"]]
 visible = false
 collision_layer = 72
@@ -3586,25 +3621,6 @@ scale = Vector2(0.52388114, 0.5622761)
 position = Vector2(2150.487, 1333.681)
 scale = Vector2(0.52388114, 0.5622761)
 
-[node name="lives" type="Node2D" parent="."]
-position = Vector2(-14.150626, 22.154171)
-script = ExtResource("10_bsmkr")
-
-[node name="live1" type="Sprite2D" parent="lives"]
-position = Vector2(1721.4722, 187.66107)
-scale = Vector2(0.22026633, 0.21835566)
-texture = ExtResource("11_3pdoh")
-
-[node name="live2" type="Sprite2D" parent="lives"]
-position = Vector2(1892.5908, 190.32292)
-scale = Vector2(0.22026633, 0.21835566)
-texture = ExtResource("11_3pdoh")
-
-[node name="live3" type="Sprite2D" parent="lives"]
-position = Vector2(2061.4866, 188.992)
-scale = Vector2(0.22026633, 0.21835566)
-texture = ExtResource("11_3pdoh")
-
 [node name="glass_break" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_hc45n")
 bus = &"SFX"
@@ -3635,13 +3651,6 @@ offset_top = 86.40127
 offset_right = 2161.0027
 offset_bottom = 332.31256
 border_width = 5.0
-
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(1085.5552, 212.68005)
-scale = Vector2(4.9320927, 4.3896627)
-texture = ExtResource("16_m7v2g")
-region_enabled = true
-region_rect = Rect2(47.46414, 8.104681, 16.535858, 23.895319)
 
 [connection signal="timeout" from="Spawn/Timer" to="Spawn" method="_on_timer_timeout"]
 [connection signal="client_satisfied" from="client" to="." method="_on_client_satisfied"]

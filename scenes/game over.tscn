@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://dd5raw8mle1yo"]
+[gd_scene load_steps=41 format=3 uid="uid://dd5raw8mle1yo"]
 
 [ext_resource type="Script" uid="uid://queic38y74ch" path="res://scenes/game_over.gd" id="1_hnr1f"]
 [ext_resource type="FontFile" uid="uid://b1jcjir01uihm" path="res://assets/KiwiSoda.ttf" id="1_y1imj"]
@@ -7,7 +7,7 @@
 [sub_resource type="Theme" id="Theme_hnr1f"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vpbcb"]
-bg_color = Color(0.654902, 0.5019608, 0.38039216, 1)
+bg_color = Color(0.8039216, 0.6627451, 0.4627451, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
@@ -91,7 +91,7 @@ default_font = ExtResource("1_y1imj")
 default_font_size = 0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bgmfq"]
-bg_color = Color(0.654902, 0.5019608, 0.38039216, 1)
+bg_color = Color(0.8039216, 0.6627451, 0.4627451, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
@@ -156,6 +156,88 @@ corner_radius_bottom_left = 16
 
 [sub_resource type="MeshTexture" id="MeshTexture_vpbcb"]
 
+[sub_resource type="Theme" id="Theme_vpbcb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_atwbw"]
+bg_color = Color(0.80277824, 0.6623942, 0.46359587, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wsd4e"]
+bg_color = Color(0.80277824, 0.6623942, 0.46359587, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iys2t"]
+bg_color = Color(0.90544915, 0.8008384, 0.656528, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tvi2m"]
+bg_color = Color(0.80277824, 0.6623942, 0.46359587, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d2axy"]
+bg_color = Color(0.59555095, 0.47016132, 0.28853133, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_47gt3"]
+bg_color = Color(0.80277824, 0.6623942, 0.46359587, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5nw8g"]
+bg_color = Color(0.80277824, 0.6623942, 0.46359587, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_78vue"]
+bg_color = Color(0.80277824, 0.6623942, 0.46359587, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ydmnx"]
+bg_color = Color(0.80277824, 0.6623942, 0.46359587, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nu1us"]
+bg_color = Color(0.80277824, 0.6623942, 0.46359587, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nlxxp"]
+bg_color = Color(0.80277824, 0.6623942, 0.46359587, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="MeshTexture" id="MeshTexture_ordcl"]
+
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -172,7 +254,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.2741099, 0.19638819, 0.13486204, 1)
+color = Color(0.14898303, 0.1298598, 0.10857881, 1)
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 1
@@ -280,6 +362,29 @@ theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_bwjhm")
 text = "main menu
 "
 icon = SubResource("MeshTexture_vpbcb")
+
+[node name="Button3" type="Button" parent="."]
+visible = false
+layout_mode = 0
+size_flags_vertical = 3
+theme = SubResource("Theme_vpbcb")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("1_y1imj")
+theme_override_font_sizes/font_size = 41
+theme_override_styles/normal = SubResource("StyleBoxFlat_atwbw")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_wsd4e")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_iys2t")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_tvi2m")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d2axy")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_47gt3")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_5nw8g")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_78vue")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_ydmnx")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_nu1us")
+theme_override_styles/focus = SubResource("StyleBoxFlat_nlxxp")
+text = "Start game"
+icon = SubResource("MeshTexture_ordcl")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

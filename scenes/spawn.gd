@@ -9,7 +9,7 @@ extends Node2D
 		
 		
 func _ready():
-	_spawn(10)
+	_spawn(200)
 	
 	
 func _spawn(amount):
@@ -20,7 +20,7 @@ func _spawn(amount):
 		cli.position = door.position
 		get_parent().add_child(cli)
 		Global.clients_alive += 1
-		await get_tree().create_timer(1).timeout
+		await get_tree().create_timer(2).timeout
 	
 	
 	

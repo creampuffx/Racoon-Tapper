@@ -29,7 +29,7 @@ func _physics_process(delta):
 	get_input()
 	
 func _process(delta):
-	$clients_to_serve.text = "clients to serve: " + str(Global.clients_alive)
+	$clients_to_serve.text = "x" + str(Global.clients_alive)
 	
 	
 	

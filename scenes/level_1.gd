@@ -26,7 +26,7 @@ func _physics_process(delta):
 	get_input()
 	
 func _process(delta):
-	$clients_to_serve.text = "clients to serve: " + str(Global.clients_alive)
+	$clients_to_serve.text = "x" + str(Global.clients_alive)
 	await get_tree().create_timer(6).timeout
 	if Global.clients_alive == 0:
 		get_tree().change_scene_to_file("res://scenes/level_2.tscn")

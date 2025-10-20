@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=4 uid="uid://bbvi7bqkurtbo"]
+[gd_scene load_steps=47 format=4 uid="uid://bbvi7bqkurtbo"]
 
 [ext_resource type="Script" uid="uid://b8ag6qlhb3sfq" path="res://scenes/level_1.gd" id="1_kvult"]
 [ext_resource type="Texture2D" uid="uid://bv0c2ao5p52oj" path="res://assets/Modern tiles_Free/Interiors_free/48x48/Room_Builder_free_48x48.png" id="2_kf3d8"]
@@ -15,6 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://d30pnauwfbyvk" path="res://assets/glass-bottle-breaking-351297.mp3" id="13_hc45n"]
 [ext_resource type="AudioStream" uid="uid://d2urt0qg2x4e2" path="res://assets/Fruit collect 1.wav" id="14_p75kv"]
 [ext_resource type="AudioStream" uid="uid://dvaqcy2l5i2if" path="res://assets/Bubble 1.wav" id="15_m7v2g"]
+[ext_resource type="Texture2D" uid="uid://dno74dnikbjqg" path="res://assets/Modern tiles_Free/Characters_free/Alex_idle_16x16.png" id="16_m7v2g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o16nf"]
 texture = ExtResource("2_kf3d8")
@@ -2083,6 +2084,8 @@ texture = ExtResource("2_kf3d8")
 [sub_resource type="TileSet" id="TileSet_ow2ny"]
 sources/0 = SubResource("TileSetAtlasSource_o16nf")
 
+[sub_resource type="Theme" id="Theme_mlye1"]
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kvult"]
 texture = ExtResource("3_poelv")
 separation = Vector2i(1, 0)
@@ -3383,6 +3386,7 @@ tile_set = SubResource("TileSet_ow2ny")
 rendering_quadrant_size = 64
 
 [node name="Spawn" type="Node2D" parent="."]
+visible = false
 position = Vector2(-65.88133, 39.927887)
 scale = Vector2(0.7619048, 1.0794872)
 script = ExtResource("3_bsmkr")
@@ -3402,6 +3406,22 @@ scale = Vector2(2.3329587, 2.8862405)
 [node name="door3" type="Marker2D" parent="Spawn"]
 position = Vector2(-1.5721664, 1129.3617)
 scale = Vector2(1, 2.775416)
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+offset_left = 345.67957
+offset_top = 73.108765
+offset_right = 2171.1104
+offset_bottom = 354.46674
+theme = SubResource("Theme_mlye1")
+color = Color(0.65882355, 0.37254903, 0.27450982, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = 357.8087
+offset_top = 86.40127
+offset_right = 2161.0027
+offset_bottom = 332.31256
+theme = SubResource("Theme_mlye1")
+color = Color(0.7921569, 0.53333336, 0.32941177, 1)
 
 [node name="client" parent="." instance=ExtResource("6_ow2ny")]
 position = Vector2(50.100204, 554.32367)
@@ -3438,6 +3458,7 @@ offset_bottom = 679.0
 color = Color(0.6596476, 0.65833884, 0.6547706, 1)
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="."]
+visible = false
 scale = Vector2(2, 2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
@@ -3476,6 +3497,7 @@ position = Vector2(5.5, -31.75)
 shape = SubResource("RectangleShape2D_g2els")
 
 [node name="StaticBody2D5" type="StaticBody2D" parent="." groups=["left_wall"]]
+visible = false
 collision_layer = 5
 collision_mask = 3
 
@@ -3494,37 +3516,36 @@ position = Vector2(2252.3208, 952.62933)
 shape = SubResource("RectangleShape2D_dqu65")
 
 [node name="score" type="Label" parent="."]
-offset_left = 50.1002
-offset_top = 39.91131
-offset_right = 494.99
-offset_bottom = 242.91132
+offset_left = 511.44406
+offset_top = 161.72543
+offset_right = 956.33386
+offset_bottom = 364.72543
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("7_1uqwn")
 theme_override_font_sizes/font_size = 100
-text = "
+text = "sdfgf
 "
-horizontal_alignment = 1
-vertical_alignment = 1
 script = ExtResource("6_kvult")
 metadata/_edit_use_anchors_ = true
 
 [node name="clients_to_serve" type="Label" parent="."]
-offset_left = 632.73517
-offset_top = 39.877506
-offset_right = 1077.625
-offset_bottom = 242.8775
+offset_left = 1134.0715
+offset_top = 117.41709
+offset_right = 1578.9612
+offset_bottom = 320.41708
+rotation = 0.009190072
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("7_1uqwn")
 theme_override_font_sizes/font_size = 100
 text = "
-"
-horizontal_alignment = 1
+zsfdxfcg"
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="wall" type="Area2D" parent="." groups=["walls"]]
+visible = false
 collision_layer = 72
 collision_mask = 52
 
@@ -3533,6 +3554,7 @@ position = Vector2(177.28067, 131.76202)
 shape = SubResource("SegmentShape2D_dqu65")
 
 [node name="teleport" type="Node2D" parent="."]
+visible = false
 
 [node name="tp1" type="Area2D" parent="teleport"]
 
@@ -3565,6 +3587,7 @@ position = Vector2(2150.487, 1333.681)
 scale = Vector2(0.52388114, 0.5622761)
 
 [node name="lives" type="Node2D" parent="."]
+position = Vector2(-14.150626, 22.154171)
 script = ExtResource("10_bsmkr")
 
 [node name="live1" type="Sprite2D" parent="lives"]
@@ -3604,6 +3627,21 @@ scale = Vector2(1.0000001, 1)
 position = Vector2(2161.4695, 1008.015)
 scale = Vector2(1.0000007, 0.99999994)
 shape = SubResource("RectangleShape2D_p75kv")
+
+[node name="ReferenceRect" type="ReferenceRect" parent="."]
+visible = false
+offset_left = 357.8087
+offset_top = 86.40127
+offset_right = 2161.0027
+offset_bottom = 332.31256
+border_width = 5.0
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(1085.5552, 212.68005)
+scale = Vector2(4.9320927, 4.3896627)
+texture = ExtResource("16_m7v2g")
+region_enabled = true
+region_rect = Rect2(47.46414, 8.104681, 16.535858, 23.895319)
 
 [connection signal="timeout" from="Spawn/Timer" to="Spawn" method="_on_timer_timeout"]
 [connection signal="client_satisfied" from="client" to="." method="_on_client_satisfied"]

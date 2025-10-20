@@ -1,7 +1,7 @@
 extends Node2D
 @onready var empty_beer: CharacterBody2D = $"empty beer"
 @onready var client_amount: int = 5
-
+@onready var row: int = 1
 
 func _ready() -> void:
 	Global.SCORE = 0
@@ -11,14 +11,16 @@ func _ready() -> void:
 	
 func get_input():
 	if Input.is_action_just_pressed("up"):
-		if $player.global_position.y == $tep3.global_position.y:
+		if row == 2:
+			$player.global_position = $tep1.global_position
+		if row == 3:
 			$player.global_position = $tep2.global_position
-		else: $player.global_position = $tep1.global_position
 		
 	if  Input.is_action_just_pressed("down"):
-		if $player.global_position.y == $tep1.global_position.y:
+		if row == 1:
 			$player.global_position = $tep2.global_position
-		else: $player.global_position = $tep3.global_position
+		if row == 2:
+			$player.global_position = $tep3.global_position
 		
 func _physics_process(delta):
 	get_input()
@@ -46,3 +48,19 @@ func _on_collect_body_entered(body: Node2D) -> void:
 		$collect_sound.play()
 		Global.add_score(50)
 		body.queue_free() 
+	
+
+
+func _on_tp_1_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		row = 1
+
+
+func _on_tp_2_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		row = 2
+
+
+func _on_tp_3_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		row = 3

@@ -3360,7 +3360,7 @@ a = Vector2(1943.8877, -150.77605)
 b = Vector2(1933.8677, 1538.8027)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2sj2h"]
-size = Vector2(2219.6016, 149.06406)
+size = Vector2(2406.8398, 149.06406)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p75kv"]
 size = Vector2(109.8185, 859.5817)
@@ -3533,24 +3533,23 @@ position = Vector2(177.28067, 131.76202)
 shape = SubResource("SegmentShape2D_dqu65")
 
 [node name="teleport" type="Node2D" parent="."]
-visible = false
 
 [node name="tp1" type="Area2D" parent="teleport"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="teleport/tp1"]
-position = Vector2(1096.6246, 782.58655)
+position = Vector2(1144.6663, 782.58655)
 shape = SubResource("RectangleShape2D_2sj2h")
 
 [node name="tp2" type="Area2D" parent="teleport"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="teleport/tp2"]
-position = Vector2(1096.0258, 1062.0818)
+position = Vector2(1120.3462, 1062.082)
 shape = SubResource("RectangleShape2D_2sj2h")
 
 [node name="tp3" type="Area2D" parent="teleport"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="teleport/tp3"]
-position = Vector2(1096.0258, 1350.8934)
+position = Vector2(1117.2828, 1350.8934)
 shape = SubResource("RectangleShape2D_2sj2h")
 
 [node name="tep1" type="Marker2D" parent="."]
@@ -3607,10 +3606,13 @@ scale = Vector2(1.0000007, 0.99999994)
 shape = SubResource("RectangleShape2D_p75kv")
 
 [connection signal="timeout" from="Spawn/Timer" to="Spawn" method="_on_timer_timeout"]
-[connection signal="client_satisfied" from="client" to="." method="_on_client_client_satisfied"]
 [connection signal="client_satisfied" from="client" to="." method="_on_client_satisfied"]
+[connection signal="client_satisfied" from="client" to="." method="_on_client_client_satisfied"]
 [connection signal="body_entered" from="player/collect" to="." method="_on_collect_body_entered"]
 [connection signal="area_entered" from="wall" to="." method="_on_wall_area_entered"]
 [connection signal="area_entered" from="wall" to="client" method="_on_wall_area_entered"]
+[connection signal="body_entered" from="teleport/tp1" to="." method="_on_tp_1_body_entered"]
+[connection signal="body_entered" from="teleport/tp2" to="." method="_on_tp_2_body_entered"]
+[connection signal="body_entered" from="teleport/tp3" to="." method="_on_tp_3_body_entered"]
 [connection signal="body_entered" from="shoot_area/Area2D" to="player" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="shoot_area/Area2D" to="player" method="_on_area_2d_body_exited"]

@@ -3592,6 +3592,32 @@ position = Vector2(2161.4695, 1008.015)
 scale = Vector2(1.0000007, 0.99999994)
 shape = SubResource("RectangleShape2D_73m23")
 
+[node name="Panel" type="Panel" parent="."]
+z_index = 4
+offset_left = 177.69363
+offset_top = 126.87726
+offset_right = 2088.3994
+offset_bottom = 698.9378
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -589.98285
+offset_top = -372.84103
+offset_right = 641.89343
+offset_bottom = 382.85767
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("9_vhnap")
+theme_override_font_sizes/font_size = 300
+text = "LEVEL 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="clients_to_serve" type="Label" parent="."]
 offset_left = 576.1327
 offset_top = 39.877506

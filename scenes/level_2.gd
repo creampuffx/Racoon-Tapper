@@ -6,6 +6,7 @@ extends Node2D
 func _ready() -> void:
 	Global.clients_alive = 0
 	$player.global_position = $tep2.global_position
+	$Panel.show()
 	
 
 	
@@ -23,6 +24,8 @@ func get_input():
 			$player.global_position = $tep3.global_position
 		
 func _physics_process(delta):
+	await get_tree().create_timer(6).timeout
+	$Panel.hide()
 	get_input()
 	
 func _process(delta):

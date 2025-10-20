@@ -4,7 +4,7 @@ extends Node2D
 @onready var row = 2
 
 func _ready() -> void:
-	Global.clients_alive = 0
+	Global.clients_alive = 1
 	$player.global_position = $tep2.global_position
 	$Panel.show()
 	

@@ -10,7 +10,7 @@ extends Node2D
 		
 func _ready():
 	_spawn(5)
-	
+	Global.clients_alive = 1
 	
 func _spawn(amount):
 	for i in range (amount):

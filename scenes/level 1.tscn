@@ -3441,7 +3441,7 @@ color = Color(0.6596476, 0.65833884, 0.6547706, 1)
 scale = Vector2(2, 2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
-position = Vector2(564, 91)
+position = Vector2(577.1434, 91.93981)
 shape = SubResource("RectangleShape2D_kf3d8")
 
 [node name="player" type="CharacterBody2D" parent="." groups=["player"]]
@@ -3510,9 +3510,9 @@ script = ExtResource("6_kvult")
 metadata/_edit_use_anchors_ = true
 
 [node name="clients_to_serve" type="Label" parent="."]
-offset_left = 576.1327
+offset_left = 632.73517
 offset_top = 39.877506
-offset_right = 1021.02246
+offset_right = 1077.625
 offset_bottom = 242.8775
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)

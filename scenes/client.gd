@@ -50,6 +50,7 @@ func handle_drink():
 		velocity.x += speed * -1 * 30
 		move_and_slide()
 		$HurtBox.monitoring = false
+		Global.clients_alive -= 1
 		await get_tree().create_timer(3).timeout
 		_DIE()
 	elif beer_amount == 2:
@@ -70,5 +71,5 @@ func handle_drink():
 		
 		
 func _DIE():
-	Global.clients_alive -= 1
+	
 	queue_free()

@@ -3447,8 +3447,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("7_1uqwn")
 theme_override_font_sizes/font_size = 100
-text = "for i in range (amount):
-		print (i)
+text = "
 "
 script = ExtResource("6_kvult")
 metadata/_edit_use_anchors_ = true
@@ -3463,8 +3462,6 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("7_1uqwn")
 theme_override_font_sizes/font_size = 100
-text = "
-zsfdxfcg"
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
@@ -3653,8 +3650,8 @@ offset_bottom = 332.31256
 border_width = 5.0
 
 [connection signal="timeout" from="Spawn/Timer" to="Spawn" method="_on_timer_timeout"]
-[connection signal="client_satisfied" from="client" to="." method="_on_client_satisfied"]
 [connection signal="client_satisfied" from="client" to="." method="_on_client_client_satisfied"]
+[connection signal="client_satisfied" from="client" to="." method="_on_client_satisfied"]
 [connection signal="body_entered" from="player/collect" to="." method="_on_collect_body_entered"]
 [connection signal="area_entered" from="wall" to="." method="_on_wall_area_entered"]
 [connection signal="area_entered" from="wall" to="client" method="_on_wall_area_entered"]

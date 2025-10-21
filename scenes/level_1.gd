@@ -9,6 +9,7 @@ func _ready() -> void:
 	
 	
 	
+	
 func get_input():
 	if Input.is_action_just_pressed("up"):
 		if row == 2:
@@ -29,6 +30,7 @@ func _process(delta):
 	$clients_to_serve.text = "x" + str(Global.clients_alive)
 	await get_tree().create_timer(6).timeout
 	if Global.clients_alive == 0:
+		await get_tree().create_timer(2).timeout
 		get_tree().change_scene_to_file("res://scenes/level_2.tscn")
 		print ("scene change")
 	
@@ -64,3 +66,9 @@ func _on_tp_2_body_entered(body: Node2D) -> void:
 func _on_tp_3_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		row = 3
+		
+		
+		
+		
+		
+		

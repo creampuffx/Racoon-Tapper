@@ -3364,7 +3364,7 @@ b = Vector2(1933.8677, 1538.8027)
 size = Vector2(2219.6016, 149.06406)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_73m23"]
-size = Vector2(109.8185, 859.5817)
+size = Vector2(104.82307, 859.5817)
 
 [sub_resource type="Gradient" id="Gradient_guvtl"]
 offsets = PackedFloat32Array(0, 0.25)
@@ -3383,6 +3383,7 @@ scale = Vector2(0.50086206, 0.44925314)
 script = ExtResource("1_guvtl")
 
 [node name="Panel" type="Panel" parent="."]
+visible = false
 z_index = 8
 offset_left = -67.882965
 offset_top = 420.69824
@@ -3482,6 +3483,7 @@ color = Color(0.6596476, 0.65833884, 0.6547706, 1)
 scale = Vector2(2, 2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+visible = false
 position = Vector2(564, 91)
 shape = SubResource("RectangleShape2D_bv48q")
 
@@ -3513,10 +3515,12 @@ collision_layer = 64
 collision_mask = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player/collect"]
+visible = false
 position = Vector2(5.5, -31.75)
 shape = SubResource("RectangleShape2D_1sb0y")
 
 [node name="StaticBody2D5" type="StaticBody2D" parent="." groups=["left_wall"]]
+visible = false
 collision_layer = 5
 collision_mask = 3
 
@@ -3543,6 +3547,7 @@ position = Vector2(177.28067, 131.76202)
 shape = SubResource("SegmentShape2D_pc3at")
 
 [node name="teleport" type="Node2D" parent="."]
+visible = false
 
 [node name="tp1" type="Area2D" parent="teleport"]
 
@@ -3593,8 +3598,8 @@ scale = Vector2(1.0000001, 1)
 position = Vector2(-13.9759035, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="shoot_area/Area2D"]
-position = Vector2(2174.251, 1046.1808)
-scale = Vector2(1.0000007, 0.99999994)
+position = Vector2(2176.7488, 1046.1808)
+scale = Vector2(1.0000008, 1)
 shape = SubResource("RectangleShape2D_73m23")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
@@ -3653,8 +3658,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("9_vhnap")
 theme_override_font_sizes/font_size = 100
-text = "for i in range (amount):
-		print (i)
+text = "
 "
 script = ExtResource("10_vwfin")
 metadata/_edit_use_anchors_ = true
@@ -3670,7 +3674,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("9_vhnap")
 theme_override_font_sizes/font_size = 100
 text = "
-zsfdxfcg"
+"
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 

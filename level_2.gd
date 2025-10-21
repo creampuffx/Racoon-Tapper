@@ -22,6 +22,10 @@ func get_input():
 func _physics_process(delta):
 	get_input()
 	
+func _process(delta: float) -> void:
+	pass
+		
+	
 func _on_wall_area_entered(area: Area2D) -> void:
 	if area.is_in_group("clients"):
 		$glass_break.play()

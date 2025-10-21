@@ -7,9 +7,8 @@ extends Node2D
 	$door3
 ]
 		
-		
 func _ready():
-	_spawn(200)
+	_spawn(10)
 	
 	
 func _spawn(amount):

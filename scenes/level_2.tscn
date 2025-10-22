@@ -3617,7 +3617,7 @@ shape = SubResource("RectangleShape2D_73m23")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 z_index = 7
-position = Vector2(3260.3787, -1745.1185)
+position = Vector2(4007.091, -1547.012)
 scale = Vector2(2352.1768, 699.43787)
 color = Color(0.8793004, 0.5914749, 0.6347984, 1)
 energy = 2.38

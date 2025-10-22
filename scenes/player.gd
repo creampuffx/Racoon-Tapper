@@ -6,6 +6,12 @@ var b
 const acc = 500
 var can_shoot
 
+func _process(float):
+	if Input.is_action_just_released("put"):
+			if can_shoot == 1:
+				$beer_2.hide()
+	
+	
 func _psychics_process (delta):
 	
 	var direction = Input.get_axis("left", "right")
@@ -41,11 +47,13 @@ func accelerate(direction):
 	velocity = velocity.move_toward(speed * direction, acc)
 
 func shoot(): 
+	
 	if Input.is_action_just_pressed("put"):
 		if can_shoot == 1:
-			$beer_2.hide()
+			$beer_2.show()
 			b = bullet.instantiate()
 			get_parent().add_child(b)
 			b.global_position = $Marker2D.global_position
+	
 			
 		

@@ -81,9 +81,6 @@ func _plus_level():
 	$Panel/Label.text = "level " + str(Global.level)
 	get_tree().change_scene_to_file("res://scenes/level_2.tscn")
 	
-	
-	
-	
-
+  
 	
 	

@@ -3560,13 +3560,13 @@ position = Vector2(5.5, -31.75)
 shape = SubResource("RectangleShape2D_g2els")
 
 [node name="beer-empty" type="Sprite2D" parent="player"]
-position = Vector2(2.085014, 6.007429)
+position = Vector2(4.2030845, 1.024724)
 scale = Vector2(-0.8181862, 1.1171563)
 texture = ExtResource("11_a1gjd")
 flip_h = true
 
 [node name="beer_2" type="Sprite2D" parent="player"]
-position = Vector2(2.084893, 6.0073986)
+position = Vector2(4.2029634, 1.0246935)
 scale = Vector2(-0.8181863, 1.1171561)
 texture = ExtResource("12_u7ucq")
 flip_h = true

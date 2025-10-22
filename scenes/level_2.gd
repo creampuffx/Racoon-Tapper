@@ -16,9 +16,7 @@ func _ready() -> void:
 	$player.global_position = $tep2.global_position
 	$Panel.show()
 	
-	
 
-	
 func get_input():
 	if Input.is_action_just_pressed("up"):
 		if row == 2:

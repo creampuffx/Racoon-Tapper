@@ -3383,7 +3383,6 @@ scale = Vector2(0.50086206, 0.44925314)
 script = ExtResource("1_guvtl")
 
 [node name="Panel" type="Panel" parent="."]
-visible = false
 z_index = 8
 offset_left = -67.882965
 offset_top = 420.69824

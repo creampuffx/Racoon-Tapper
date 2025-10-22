@@ -27,8 +27,10 @@ func _psychics_process (delta):
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	can_shoot = 1
+	$beer_2.show()
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	can_shoot = 0
+	$beer_2.hide()
 
 func _physics_process(delta):
 	_psychics_process(delta)
@@ -41,7 +43,9 @@ func accelerate(direction):
 func shoot(): 
 	if Input.is_action_just_pressed("put"):
 		if can_shoot == 1:
+			$beer_2.hide()
 			b = bullet.instantiate()
 			get_parent().add_child(b)
 			b.global_position = $Marker2D.global_position
+			
 		

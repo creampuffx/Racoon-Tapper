@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=4 uid="uid://bbvi7bqkurtbo"]
+[gd_scene load_steps=49 format=4 uid="uid://bbvi7bqkurtbo"]
 
 [ext_resource type="Script" uid="uid://b8ag6qlhb3sfq" path="res://scenes/level_1.gd" id="1_kvult"]
 [ext_resource type="Texture2D" uid="uid://bv0c2ao5p52oj" path="res://assets/Modern tiles_Free/Interiors_free/48x48/Room_Builder_free_48x48.png" id="2_kf3d8"]
@@ -12,6 +12,8 @@
 [ext_resource type="AudioStream" uid="uid://dpkek6eti1byy" path="res://assets/track 3.wav" id="9_2sj2h"]
 [ext_resource type="Script" uid="uid://unx8rbywpsfv" path="res://scenes/lives.gd" id="10_bsmkr"]
 [ext_resource type="Texture2D" uid="uid://pamyytouhyyn" path="res://images2/red-pixel-heart-2.png" id="11_3pdoh"]
+[ext_resource type="Texture2D" uid="uid://cmdf0fusftubx" path="res://assets/Empty cup 2.png" id="11_a1gjd"]
+[ext_resource type="Texture2D" uid="uid://crujdkowjb3vn" path="res://assets/Milk and cookies.png" id="12_u7ucq"]
 [ext_resource type="AudioStream" uid="uid://d30pnauwfbyvk" path="res://assets/glass-bottle-breaking-351297.mp3" id="13_hc45n"]
 [ext_resource type="AudioStream" uid="uid://d2urt0qg2x4e2" path="res://assets/Fruit collect 1.wav" id="14_p75kv"]
 [ext_resource type="AudioStream" uid="uid://dvaqcy2l5i2if" path="res://assets/Bubble 1.wav" id="15_m7v2g"]
@@ -3556,6 +3558,18 @@ collision_mask = 32
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player/collect"]
 position = Vector2(5.5, -31.75)
 shape = SubResource("RectangleShape2D_g2els")
+
+[node name="beer-empty" type="Sprite2D" parent="player"]
+position = Vector2(2.085014, 6.007429)
+scale = Vector2(-0.8181862, 1.1171563)
+texture = ExtResource("11_a1gjd")
+flip_h = true
+
+[node name="beer_2" type="Sprite2D" parent="player"]
+position = Vector2(2.084893, 6.0073986)
+scale = Vector2(-0.8181863, 1.1171561)
+texture = ExtResource("12_u7ucq")
+flip_h = true
 
 [node name="StaticBody2D5" type="StaticBody2D" parent="." groups=["left_wall"]]
 visible = false

@@ -6,7 +6,7 @@ extends Node2D
 func _ready() -> void:
 	Global.SCORE = 0
 	Global.clients_alive = 1
-	
+	Global.level = 2
 	
 	
 	

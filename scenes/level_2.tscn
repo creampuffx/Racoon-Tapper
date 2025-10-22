@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=4 uid="uid://dc8ksoiqjdffu"]
+[gd_scene load_steps=51 format=4 uid="uid://dc8ksoiqjdffu"]
 
 [ext_resource type="Script" uid="uid://skhhasnv7unh" path="res://scenes/level_2.gd" id="1_guvtl"]
 [ext_resource type="AudioStream" uid="uid://dpkek6eti1byy" path="res://assets/track 3.wav" id="2_igmy8"]
@@ -9,8 +9,10 @@
 [ext_resource type="Script" uid="uid://bjvtrlsuqrhr1" path="res://scenes/player.gd" id="7_k6a82"]
 [ext_resource type="Texture2D" uid="uid://osou201nad5q" path="res://assets/sRaccoon_free.png" id="8_1sb0y"]
 [ext_resource type="FontFile" uid="uid://b1jcjir01uihm" path="res://assets/KiwiSoda.ttf" id="9_vhnap"]
+[ext_resource type="Texture2D" uid="uid://cmdf0fusftubx" path="res://assets/Empty cup 2.png" id="10_7qsfm"]
 [ext_resource type="Script" uid="uid://cirft3lyh27sy" path="res://scenes/score.gd" id="10_vwfin"]
 [ext_resource type="Script" uid="uid://unx8rbywpsfv" path="res://scenes/lives.gd" id="11_63d2t"]
+[ext_resource type="Texture2D" uid="uid://crujdkowjb3vn" path="res://assets/Milk and cookies.png" id="11_bv48q"]
 [ext_resource type="Texture2D" uid="uid://pamyytouhyyn" path="res://images2/red-pixel-heart-2.png" id="12_va6c3"]
 [ext_resource type="Texture2D" uid="uid://dno74dnikbjqg" path="res://assets/Modern tiles_Free/Characters_free/Alex_idle_16x16.png" id="13_igmy8"]
 [ext_resource type="AudioStream" uid="uid://d30pnauwfbyvk" path="res://assets/glass-bottle-breaking-351297.mp3" id="13_pc3at"]
@@ -3518,6 +3520,18 @@ visible = false
 position = Vector2(5.5, -31.75)
 shape = SubResource("RectangleShape2D_1sb0y")
 
+[node name="beer-empty" type="Sprite2D" parent="player"]
+position = Vector2(2.085014, 6.007429)
+scale = Vector2(-0.8181862, 1.1171563)
+texture = ExtResource("10_7qsfm")
+flip_h = true
+
+[node name="beer_2" type="Sprite2D" parent="player"]
+position = Vector2(2.084893, 6.0073986)
+scale = Vector2(-0.8181863, 1.1171561)
+texture = ExtResource("11_bv48q")
+flip_h = true
+
 [node name="StaticBody2D5" type="StaticBody2D" parent="." groups=["left_wall"]]
 visible = false
 collision_layer = 5
@@ -3605,7 +3619,7 @@ shape = SubResource("RectangleShape2D_73m23")
 z_index = 7
 position = Vector2(3260.3787, -1745.1185)
 scale = Vector2(2352.1768, 699.43787)
-color = Color(0.86066955, 0.70295674, 0.5087561, 1)
+color = Color(0.8793004, 0.5914749, 0.6347984, 1)
 energy = 2.38
 range_z_min = -1031
 texture = SubResource("GradientTexture2D_igmy8")
@@ -3613,7 +3627,7 @@ texture_scale = 0.45
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 z_index = 8
-color = Color(0.38495365, 0.90450495, 0.7307865, 1)
+color = Color(0.6867057, 0.8556416, 0.59613484, 1)
 blend_mode = 1
 max_distance = 157.0
 

@@ -15,6 +15,8 @@ func _ready() -> void:
 	Global.clients_alive = 1
 	$player.global_position = $tep2.global_position
 	$Panel.show()
+	await get_tree().create_timer(6).timeout
+	$Panel.hide()
 	
 
 func get_input():
@@ -31,8 +33,6 @@ func get_input():
 			$player.global_position = $tep3.global_position
 		
 func _physics_process(delta):
-	await get_tree().create_timer(6).timeout
-	$Panel.hide()
 	get_input()
 	
 func _process(delta):
@@ -76,10 +76,11 @@ func _on_tp_3_body_entered(body: Node2D) -> void:
 		
 		
 func _plus_level():
-	_ready()
-	level += 1
+	Global.level += 1
 	$Panel.show()
-	$Panel/Label.text = "level " + str(level)
+	$Panel/Label.text = "level " + str(Global.level)
+	get_tree().change_scene_to_file("res://scenes/level_2.tscn")
+	
 	
 	
 	

@@ -12,6 +12,8 @@ func _ready() -> void:
 	
 func get_input():
 	if Input.is_action_just_pressed("up"):
+		if row == 1:
+			$player.global_position = $tep1.global_position
 		if row == 2:
 			$player.global_position = $tep1.global_position
 		if row == 3:
@@ -21,6 +23,8 @@ func get_input():
 		if row == 1:
 			$player.global_position = $tep2.global_position
 		if row == 2:
+			$player.global_position = $tep3.global_position
+		if row == 3:
 			$player.global_position = $tep3.global_position
 		
 func _physics_process(delta):

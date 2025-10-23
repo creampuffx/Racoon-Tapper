@@ -1,6 +1,7 @@
-[gd_scene load_steps=51 format=4 uid="uid://dc8ksoiqjdffu"]
+[gd_scene load_steps=52 format=4 uid="uid://dc8ksoiqjdffu"]
 
 [ext_resource type="Script" uid="uid://skhhasnv7unh" path="res://scenes/level_2.gd" id="1_guvtl"]
+[ext_resource type="Script" uid="uid://cg1tatpq3pjhb" path="res://scenes/panel.gd" id="2_bv48q"]
 [ext_resource type="AudioStream" uid="uid://dpkek6eti1byy" path="res://assets/track 3.wav" id="2_igmy8"]
 [ext_resource type="Texture2D" uid="uid://bv0c2ao5p52oj" path="res://assets/Modern tiles_Free/Interiors_free/48x48/Room_Builder_free_48x48.png" id="3_wdtqu"]
 [ext_resource type="Script" uid="uid://bpbqshiyi17lb" path="res://scenes/spawn.gd" id="4_igmy8"]
@@ -3390,6 +3391,7 @@ offset_left = -67.882965
 offset_top = 420.69824
 offset_right = 2321.9966
 offset_bottom = 992.7588
+script = ExtResource("2_bv48q")
 
 [node name="Label" type="Label" parent="Panel"]
 modulate = Color(0.7700694, 0.6082304, 0.48124325, 1)
@@ -3407,7 +3409,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("9_vhnap")
 theme_override_font_sizes/font_size = 300
-text = "LEVEL 2"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -3521,16 +3522,28 @@ position = Vector2(5.5, -31.75)
 shape = SubResource("RectangleShape2D_1sb0y")
 
 [node name="beer-empty" type="Sprite2D" parent="player"]
-position = Vector2(2.085014, 6.007429)
-scale = Vector2(-0.8181862, 1.1171563)
+position = Vector2(4.2030845, 1.024724)
+scale = Vector2(-1.3827049, 1.7190086)
 texture = ExtResource("10_7qsfm")
 flip_h = true
 
 [node name="beer_2" type="Sprite2D" parent="player"]
-position = Vector2(2.084893, 6.0073986)
-scale = Vector2(-0.8181863, 1.1171561)
+position = Vector2(4.2029634, 1.0246935)
+scale = Vector2(-1.382705, 1.7190083)
 texture = ExtResource("11_bv48q")
 flip_h = true
+
+[node name="left" type="Marker2D" parent="player"]
+position = Vector2(-50.43125, 25.374687)
+
+[node name="right" type="Marker2D" parent="player"]
+position = Vector2(53.354195, 25.374687)
+
+[node name="put" type="Marker2D" parent="player"]
+position = Vector2(-21.8373, -43.137505)
+
+[node name="oven" type="Marker2D" parent="player"]
+position = Vector2(30.055424, 0.46116018)
 
 [node name="StaticBody2D5" type="StaticBody2D" parent="." groups=["left_wall"]]
 visible = false
@@ -3617,7 +3630,7 @@ shape = SubResource("RectangleShape2D_73m23")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 z_index = 7
-position = Vector2(4007.091, -1547.012)
+position = Vector2(4039.0361, -1689.4705)
 scale = Vector2(2352.1768, 699.43787)
 color = Color(0.8793004, 0.5914749, 0.6347984, 1)
 energy = 2.38

@@ -9,6 +9,8 @@ var can_shoot
 func _process(float):
 	if Input.is_action_just_released("put"):
 			if can_shoot == 1:
+				$"beer-empty".global_position = $put.global_position
+				$beer_2.global_position = $put.global_position
 				$beer_2.hide()
 	
 	
@@ -19,15 +21,22 @@ func _psychics_process (delta):
 	if direction: 
 		velocity.x = direction * speed
 		$AnimatedSprite2D.play("walk_right")
+		$"beer-empty".global_position = $right.global_position
+		$beer_2.global_position = $right.global_position
+		
 		
 	else: 
 		velocity.x = 0
 		$AnimatedSprite2D.play("idle")
+		$"beer-empty".global_position = $oven.global_position
+		$beer_2.global_position = $oven.global_position
 	
 	if direction == 1:
 		$AnimatedSprite2D.flip_h = false
 	elif direction == -1:
 		$AnimatedSprite2D.flip_h = true
+		$"beer-empty".global_position = $left.global_position
+		$beer_2.global_position = $left.global_position
 		
 	move_and_slide()
 
@@ -54,6 +63,9 @@ func shoot():
 			b = bullet.instantiate()
 			get_parent().add_child(b)
 			b.global_position = $Marker2D.global_position
+			
+			
+	 
 	
 			
 		

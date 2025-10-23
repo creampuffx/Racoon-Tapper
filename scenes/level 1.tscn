@@ -3541,7 +3541,6 @@ scale = Vector2(2.8359377, 2.6640627)
 sprite_frames = SubResource("SpriteFrames_ow2ny")
 animation = &"walk_right"
 autoplay = "walk_down"
-flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
 position = Vector2(-1, 27)
@@ -3550,6 +3549,7 @@ shape = SubResource("CapsuleShape2D_g2els")
 
 [node name="Marker2D" type="Marker2D" parent="player"]
 position = Vector2(-32, -76)
+scale = Vector2(1.3496385, 1.294807)
 
 [node name="collect" type="Area2D" parent="player" groups=["player"]]
 collision_layer = 64
@@ -3561,15 +3561,27 @@ shape = SubResource("RectangleShape2D_g2els")
 
 [node name="beer-empty" type="Sprite2D" parent="player"]
 position = Vector2(4.2030845, 1.024724)
-scale = Vector2(-0.8181862, 1.1171563)
+scale = Vector2(-1.3827049, 1.7190086)
 texture = ExtResource("11_a1gjd")
 flip_h = true
 
 [node name="beer_2" type="Sprite2D" parent="player"]
 position = Vector2(4.2029634, 1.0246935)
-scale = Vector2(-0.8181863, 1.1171561)
+scale = Vector2(-1.382705, 1.7190083)
 texture = ExtResource("12_u7ucq")
 flip_h = true
+
+[node name="left" type="Marker2D" parent="player"]
+position = Vector2(-50.43125, 25.374687)
+
+[node name="right" type="Marker2D" parent="player"]
+position = Vector2(53.354195, 25.374687)
+
+[node name="put" type="Marker2D" parent="player"]
+position = Vector2(-21.8373, -43.137505)
+
+[node name="oven" type="Marker2D" parent="player"]
+position = Vector2(30.055424, 0.46116018)
 
 [node name="StaticBody2D5" type="StaticBody2D" parent="." groups=["left_wall"]]
 visible = false
@@ -3621,7 +3633,7 @@ position = Vector2(1117.2828, 1350.8934)
 shape = SubResource("RectangleShape2D_2sj2h")
 
 [node name="tep1" type="Marker2D" parent="."]
-position = Vector2(2150, 754)
+position = Vector2(2161.0027, 755.4572)
 scale = Vector2(0.52388114, 0.5622761)
 
 [node name="tep2" type="Marker2D" parent="."]
@@ -3662,6 +3674,33 @@ offset_top = 86.40127
 offset_right = 2161.0027
 offset_bottom = 332.31256
 border_width = 5.0
+
+[node name="Panel" type="Panel" parent="."]
+z_index = 8
+offset_left = -67.882965
+offset_top = 420.69824
+offset_right = 2321.9966
+offset_bottom = 992.7588
+
+[node name="Label" type="Label" parent="Panel"]
+modulate = Color(0.7700694, 0.6082304, 0.48124325, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -589.98285
+offset_top = -372.84103
+offset_right = 641.89343
+offset_bottom = 382.85767
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_1uqwn")
+theme_override_font_sizes/font_size = 300
+text = "LEVEL 1"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="timeout" from="Spawn/Timer" to="Spawn" method="_on_timer_timeout"]
 [connection signal="client_satisfied" from="client" to="." method="_on_client_client_satisfied"]

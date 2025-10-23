@@ -4,7 +4,7 @@ var health = 1
 @onready var bullet = preload("res://scenes/empty_beer.tscn")
 @onready var empty_beer_position: Marker2D = $empty_beer_position
 var direction = -1
-@onready var how_much = [1, 1, 2]
+@onready var how_much = [1, 2, 2]
 @onready var beer_amount = how_much[randi() % how_much.size()]
 signal client_satisfied
 

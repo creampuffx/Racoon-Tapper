@@ -18,6 +18,7 @@ func _ready() -> void:
 	await get_tree().create_timer(6).timeout
 	$Panel.hide()
 	
+	
 
 func get_input():
 	if Input.is_action_just_pressed("up"):
@@ -81,6 +82,8 @@ func _on_tp_3_body_entered(body: Node2D) -> void:
 		
 func _plus_level():
 	Global.level += 1
+	Global.spawn += 1
+	Global.speed += 10
 	$Panel.show()
 	get_tree().change_scene_to_file("res://scenes/level_2.tscn")
 	

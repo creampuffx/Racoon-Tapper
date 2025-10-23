@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://d30pnauwfbyvk" path="res://assets/glass-bottle-breaking-351297.mp3" id="3_wyb4x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3f2jf"]
-size = Vector2(29, 27)
+size = Vector2(29, 9.238731)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wyb4x"]
 size = Vector2(35.107597, 31.221094)
@@ -23,7 +23,7 @@ scale = Vector2(2.0790024, 2.5105815)
 texture = ExtResource("1_2geu6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 0.5)
+position = Vector2(0.49999994, 22.795553)
 scale = Vector2(2.0790024, 2.5105815)
 shape = SubResource("RectangleShape2D_3f2jf")
 

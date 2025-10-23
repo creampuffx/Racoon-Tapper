@@ -7,7 +7,11 @@ func _ready() -> void:
 	Global.SCORE = 0
 	Global.clients_alive = 1
 	Global.level = 2
-	
+	Global.spawn = 1
+	Global.speed = 5
+	$Panel.show()
+	await get_tree().create_timer(6).timeout
+	$Panel.hide()
 	
 	
 func get_input():
@@ -70,9 +74,3 @@ func _on_tp_2_body_entered(body: Node2D) -> void:
 func _on_tp_3_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		row = 3
-		
-		
-		
-		
-		
-		

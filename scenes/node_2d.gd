@@ -9,7 +9,7 @@ extends Node2D
 		
 		
 func _ready():
-	_spawn(5)
+	_spawn(Global.spawn * 5)
 	
 	
 func _spawn(amount):

@@ -8,7 +8,7 @@ extends Node2D
 ]
 		
 func _ready():
-	_spawn(10)
+	_spawn(Global.spawn * 5)
 	
 	
 func _spawn(amount):

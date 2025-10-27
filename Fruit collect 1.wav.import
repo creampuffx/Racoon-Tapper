@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://d2urt0qg2x4e2"
-path="res://.godot/imported/Fruit collect 1.wav-476094d7a757cdce6ef141d968497c5e.sample"
+path="res://.godot/imported/Fruit collect 1.wav-cde9ee019311dc3af447674319bcb4f8.sample"
 
 [deps]
 
-source_file="res://assets/Fruit collect 1.wav"
-dest_files=["res://.godot/imported/Fruit collect 1.wav-476094d7a757cdce6ef141d968497c5e.sample"]
+source_file="res://Fruit collect 1.wav"
+dest_files=["res://.godot/imported/Fruit collect 1.wav-cde9ee019311dc3af447674319bcb4f8.sample"]
 
 [params]
 

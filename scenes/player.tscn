@@ -1,8 +1,9 @@
-[gd_scene load_steps=22 format=3 uid="uid://bj3i5gjn2lj3t"]
+[gd_scene load_steps=26 format=3 uid="uid://bj3i5gjn2lj3t"]
 
 [ext_resource type="Script" uid="uid://bjvtrlsuqrhr1" path="res://scenes/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://osou201nad5q" path="res://assets/sRaccoon_free.png" id="2_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://cmdf0fusftubx" path="res://assets/Empty cup 2.png" id="3_dqkch"]
+[ext_resource type="Texture2D" uid="uid://bubqtupqg26qb" path="res://assets/Untitled 2-058e (1).png" id="3_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://crujdkowjb3vn" path="res://assets/Milk and cookies.png" id="4_qlg0r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ow2ny"]
@@ -12,6 +13,18 @@ region = Rect2(0, 0, 64, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
 atlas = ExtResource("2_qhqgy")
 region = Rect2(64, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tuyoq"]
+atlas = ExtResource("3_qlg0r")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjrip"]
+atlas = ExtResource("3_qlg0r")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_smehm"]
+atlas = ExtResource("3_qlg0r")
+region = Rect2(128, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gvhk2"]
 atlas = ExtResource("2_qhqgy")
@@ -73,6 +86,20 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tuyoq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fjrip")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_smehm")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -142,9 +169,8 @@ script = ExtResource("1_g2els")
 position = Vector2(0, -1)
 scale = Vector2(2.8359377, 2.6640627)
 sprite_frames = SubResource("SpriteFrames_ow2ny")
-animation = &"walk_right"
+animation = &"new_animation"
 autoplay = "walk_down"
-flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 27)

@@ -20,21 +20,23 @@ func _psychics_process (delta):
 	
 	if direction: 
 		velocity.x = direction * speed
-		$AnimatedSprite2D.play("walk_right")
+		
 		$"beer-empty".global_position = $right.global_position
 		$beer_2.global_position = $right.global_position
+		$AnimatedSprite2D.play("run")
 		
 		
 	else: 
 		velocity.x = 0
-		$AnimatedSprite2D.play("idle")
+		$AnimatedSprite2D.play("idle_1")
 		$"beer-empty".global_position = $oven.global_position
 		$beer_2.global_position = $oven.global_position
+		
 	
 	if direction == 1:
-		$AnimatedSprite2D.flip_h = false
-	elif direction == -1:
 		$AnimatedSprite2D.flip_h = true
+	elif direction == -1:
+		$AnimatedSprite2D.flip_h = false
 		$"beer-empty".global_position = $left.global_position
 		$beer_2.global_position = $left.global_position
 		

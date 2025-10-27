@@ -17,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://pamyytouhyyn" path="res://images2/red-pixel-heart-2.png" id="12_va6c3"]
 [ext_resource type="Texture2D" uid="uid://dno74dnikbjqg" path="res://assets/Modern tiles_Free/Characters_free/Alex_idle_16x16.png" id="13_igmy8"]
 [ext_resource type="AudioStream" uid="uid://d30pnauwfbyvk" path="res://assets/glass-bottle-breaking-351297.mp3" id="13_pc3at"]
-[ext_resource type="AudioStream" uid="uid://d2urt0qg2x4e2" path="res://assets/Fruit collect 1.wav" id="14_bgibu"]
+[ext_resource type="AudioStream" uid="uid://d2urt0qg2x4e2" path="res://Fruit collect 1.wav" id="14_bgibu"]
 [ext_resource type="AudioStream" uid="uid://dvaqcy2l5i2if" path="res://assets/Bubble 1.wav" id="15_73m23"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_guvtl"]

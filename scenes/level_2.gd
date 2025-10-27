@@ -17,25 +17,38 @@ func _ready() -> void:
 	$Panel.show()
 	await get_tree().create_timer(6).timeout
 	$Panel.hide()
+	%player2.hide()
 	
 	
 
 func get_input():
 	if Input.is_action_just_pressed("up"):
+		$player2.position.y = $player.position.y
+		$player2.position.x = $player.position.x + 100
+		$player2.show()
+		$player2/AnimatedSprite2D.play("tep")
 		if row == 1:
 			$player.global_position = $tep1.global_position
 		if row == 2:
 			$player.global_position = $tep1.global_position
 		if row == 3:
 			$player.global_position = $tep2.global_position
+		await get_tree().create_timer(0.5).timeout
+		$player2.hide()
 		
 	if  Input.is_action_just_pressed("down"):
+		$player2.position.y = $player.position.y
+		$player2.position.x = $player.position.x + 100
+		$player2.show()
+		$player2/AnimatedSprite2D.play("tep")
 		if row == 1:
 			$player.global_position = $tep2.global_position
 		if row == 2:
 			$player.global_position = $tep3.global_position
 		if row == 3:
 			$player.global_position = $tep3.global_position
+		await get_tree().create_timer(0.5).timeout
+		$player2.hide()
 		
 func _physics_process(delta):
 	get_input()

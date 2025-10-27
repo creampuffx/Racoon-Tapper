@@ -3706,7 +3706,7 @@ animation = &"idle_1"
 autoplay = "idle_1"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
-position = Vector2(-1, 27)
+position = Vector2(0.40239406, 4.1981716)
 rotation = 3.1450477
 shape = SubResource("CapsuleShape2D_g2els")
 

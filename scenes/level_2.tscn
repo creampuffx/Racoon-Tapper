@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=4 uid="uid://dc8ksoiqjdffu"]
+[gd_scene load_steps=60 format=4 uid="uid://dc8ksoiqjdffu"]
 
 [ext_resource type="Script" uid="uid://skhhasnv7unh" path="res://scenes/level_2.gd" id="1_guvtl"]
 [ext_resource type="Script" uid="uid://cg1tatpq3pjhb" path="res://scenes/panel.gd" id="2_bv48q"]
@@ -19,6 +19,7 @@
 [ext_resource type="AudioStream" uid="uid://d30pnauwfbyvk" path="res://assets/glass-bottle-breaking-351297.mp3" id="13_pc3at"]
 [ext_resource type="AudioStream" uid="uid://d2urt0qg2x4e2" path="res://Fruit collect 1.wav" id="14_bgibu"]
 [ext_resource type="AudioStream" uid="uid://dvaqcy2l5i2if" path="res://assets/Bubble 1.wav" id="15_73m23"]
+[ext_resource type="Texture2D" uid="uid://cqf2pboeis73u" path="res://assets/racoon-tep.png" id="20_k22d5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_guvtl"]
 texture = ExtResource("3_wdtqu")
@@ -3380,6 +3381,56 @@ fill_from = Vector2(0.5, 0.5)
 
 [sub_resource type="Theme" id="Theme_wdtqu"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_r5fkv"]
+atlas = ExtResource("20_k22d5")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mopwt"]
+atlas = ExtResource("20_k22d5")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_odcxm"]
+atlas = ExtResource("20_k22d5")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x08b7"]
+atlas = ExtResource("20_k22d5")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v77eh"]
+atlas = ExtResource("20_k22d5")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k6a82"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r5fkv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r5fkv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mopwt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_odcxm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x08b7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v77eh")
+}],
+"loop": true,
+"name": &"tep",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1sb0y"]
+radius = 11.996474
+height = 25.992935
+
 [node name="level 2" type="Node2D"]
 modulate = Color(0.6348793, 0.7190428, 0.9652515, 1)
 scale = Vector2(0.50086206, 0.44925314)
@@ -3722,6 +3773,27 @@ texture = ExtResource("12_va6c3")
 position = Vector2(2061.4866, 188.992)
 scale = Vector2(0.22026633, 0.21835566)
 texture = ExtResource("12_va6c3")
+
+[node name="player2" type="CharacterBody2D" parent="." groups=["player"]]
+unique_name_in_owner = true
+visible = false
+z_index = 3
+position = Vector2(2150.127, 754.637)
+scale = Vector2(1.9088299, 1.7784854)
+collision_layer = 0
+collision_mask = 0
+motion_mode = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player2"]
+position = Vector2(-90.67457, -43.13751)
+scale = Vector2(2.745518, 2.728018)
+sprite_frames = SubResource("SpriteFrames_k6a82")
+animation = &"tep"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player2"]
+position = Vector2(-1, 27)
+rotation = 3.1450477
+shape = SubResource("CapsuleShape2D_1sb0y")
 
 [connection signal="timeout" from="Spawn2/Timer" to="Spawn2" method="_on_timer_timeout"]
 [connection signal="body_entered" from="player/collect" to="." method="_on_collect_body_entered"]

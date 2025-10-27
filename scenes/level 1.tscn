@@ -3530,7 +3530,7 @@ b = Vector2(1933.8677, 1538.8027)
 size = Vector2(2406.8398, 149.06406)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p75kv"]
-size = Vector2(109.8185, 859.5817)
+size = Vector2(194.06546, 859.5817)
 
 [node name="level 1" type="Node2D"]
 scale = Vector2(0.49467775, 0.45138228)
@@ -3844,14 +3844,13 @@ stream = ExtResource("15_m7v2g")
 bus = &"SFX"
 
 [node name="shoot_area" type="Node2D" parent="."]
-visible = false
 scale = Vector2(1.0000001, 1)
 
 [node name="Area2D" type="Area2D" parent="shoot_area"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="shoot_area/Area2D"]
-position = Vector2(2161.4695, 1008.015)
-scale = Vector2(1.0000007, 0.99999994)
+position = Vector2(2134.7224, 1008.0148)
+scale = Vector2(1.0000007, 0.9999998)
 shape = SubResource("RectangleShape2D_p75kv")
 
 [node name="ReferenceRect" type="ReferenceRect" parent="."]

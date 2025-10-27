@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://vlxyclnir7g8"]
+[gd_scene load_steps=36 format=3 uid="uid://vlxyclnir7g8"]
 
 [ext_resource type="Script" uid="uid://uidp4xw6xlon" path="res://scenes/starting_screen.gd" id="1_ihen6"]
 [ext_resource type="Texture2D" uid="uid://cmwb0trcdph8g" path="res://images2/Zrzut ekranu 2025-10-04 224553.png" id="1_lyhl5"]
@@ -6,8 +6,12 @@
 [ext_resource type="FontFile" uid="uid://b1jcjir01uihm" path="res://assets/KiwiSoda.ttf" id="3_l1ni3"]
 [ext_resource type="AudioStream" uid="uid://dpkek6eti1byy" path="res://assets/track 3.wav" id="5_l1ni3"]
 [ext_resource type="Script" uid="uid://wf0li5c1qt6j" path="res://scenes/options.gd" id="6_ih3ue"]
+[ext_resource type="Texture2D" uid="uid://0y1emus50qct" path="res://assets/racoon-idle.png" id="6_ykxa6"]
+[ext_resource type="Texture2D" uid="uid://crujdkowjb3vn" path="res://assets/Milk and cookies.png" id="7_agcxa"]
 [ext_resource type="Script" uid="uid://d1omawwuoob3q" path="res://scenes/music_volume.gd" id="7_d085l"]
 [ext_resource type="Script" uid="uid://nqnylxwtm64v" path="res://scenes/sfx_volume.gd" id="8_jtkxu"]
+
+[sub_resource type="Theme" id="Theme_m2lim"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jix8l"]
 texture = ExtResource("1_lyhl5")
@@ -18,7 +22,7 @@ modulate_color = Color(0.38884684, 0.41349068, 0.38192075, 1)
 [sub_resource type="Theme" id="Theme_glbon"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lyhl5"]
-bg_color = Color(0.80277824, 0.6623942, 0.46359587, 1)
+bg_color = Color(0.4862745, 0.28235295, 0.2627451, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
@@ -175,7 +179,37 @@ layout_mode = 0
 offset_right = 1147.0
 offset_bottom = 642.0
 scale = Vector2(0.6100592, 0.62318224)
-color = Color(0.91552997, 0.819612, 0.6877281, 1)
+color = Color(0.68, 0.51045334, 0.3808, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 79.57101
+offset_top = 45.236874
+offset_right = 1905.0018
+offset_bottom = 326.59485
+scale = Vector2(0.19243562, 0.7341481)
+theme = SubResource("Theme_m2lim")
+color = Color(0.65882355, 0.37254903, 0.27450982, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 91.70015
+offset_top = 58.529373
+offset_right = 1894.8942
+offset_bottom = 304.44067
+scale = Vector2(0.18269148, 0.7596604)
+theme = SubResource("Theme_m2lim")
+color = Color(0.7921569, 0.53333336, 0.32941177, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 101.80773
+offset_top = 65.17563
+offset_right = 1884.7867
+offset_bottom = 295.579
+scale = Vector2(0.17671207, 0.7618551)
+theme = SubResource("Theme_m2lim")
+color = Color(0.22745098, 0.22745098, 0.3137255, 1)
 
 [node name="Panel" type="Panel" parent="."]
 visible = false
@@ -215,10 +249,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -413.8209
-offset_top = -224.23096
-offset_right = 234.17914
-offset_bottom = 54.269043
+offset_left = -439.4628
+offset_top = -236.71909
+offset_right = -16.760925
+offset_bottom = 10.826843
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5647313, 0.5605443)
@@ -297,9 +331,9 @@ offset_bottom = 367.37885
 grow_horizontal = 2
 rotation = -0.0022131763
 theme = SubResource("Theme_qe12f")
-theme_override_colors/font_color = Color(0.8039216, 0.6627451, 0.4627451, 1)
+theme_override_colors/font_color = Color(0.7734276, 0.30528784, 0.2711069, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.42732933, 0.2074109, 0.2042489, 1)
 theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 90
 text = "Racoon Tapper"
@@ -325,6 +359,7 @@ theme_override_fonts/font = ExtResource("3_l1ni3")
 theme_override_font_sizes/font_size = 24
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(86.25255, 179.7082)
 rotation = -0.31721723
 scale = Vector2(9.115439, 7.3919435)
@@ -332,7 +367,25 @@ texture = ExtResource("3_ih3ue")
 region_enabled = true
 region_rect = Rect2(17.5, 4, 27, 35)
 
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+modulate = Color(0.8995408, 0.78865993, 0.7068073, 1)
+position = Vector2(573.9714, 141.37674)
+rotation = -0.31721723
+scale = Vector2(6.138374, 5.578104)
+texture = ExtResource("6_ykxa6")
+region_enabled = true
+region_rect = Rect2(13.5, 17, 37, 47)
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+modulate = Color(0.6784314, 0.50980395, 0.38039216, 1)
+position = Vector2(490.18173, 198.29872)
+rotation = -0.31721723
+scale = Vector2(3.4076753, 4.0492086)
+texture = ExtResource("7_agcxa")
+region_rect = Rect2(13.5, 17, 37, 47)
+
 [node name="Sprite2D2" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(587.3677, 178.46886)
 rotation = 0.22021715
 scale = Vector2(9.115439, 7.3919435)

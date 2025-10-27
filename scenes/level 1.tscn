@@ -3886,7 +3886,7 @@ z_index = 3
 position = Vector2(-13.9759035, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="shoot_area/Area2D"]
-position = Vector2(2176.7488, 1046.1808)
+position = Vector2(2164.871, 1045.6769)
 scale = Vector2(1.0000008, 1)
 shape = SubResource("RectangleShape2D_r5fkv")
 

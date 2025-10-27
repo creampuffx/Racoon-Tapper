@@ -3,13 +3,7 @@ extends Node2D
 @onready var client_amount: int = 5
 @onready var row = 2
 var level = 2
-@onready var client_scene = preload("res://scenes/client.tscn")
-@onready var doors = [
-	$door1,
-	$door2,
-	$door3
-]
-		
+
 
 func _ready() -> void:
 	Global.clients_alive = 1
@@ -24,21 +18,23 @@ func _ready() -> void:
 func get_input():
 	if Input.is_action_just_pressed("up"):
 		$player2.position.y = $player.position.y
-		$player2.position.x = $player.position.x + 100
-		$player2.show()
-		$player2/AnimatedSprite2D.play("tep")
+		$player2.position.x = $player.position.x + 180
+		
 		if row == 1:
 			$player.global_position = $tep1.global_position
 		if row == 2:
 			$player.global_position = $tep1.global_position
 		if row == 3:
 			$player.global_position = $tep2.global_position
-		await get_tree().create_timer(0.5).timeout
+		$player2.show()
+		$player2/AnimatedSprite2D.play("tep")
+		await get_tree().create_timer(0.4).timeout
+		$player2/AnimatedSprite2D.stop()
 		$player2.hide()
 		
 	if  Input.is_action_just_pressed("down"):
 		$player2.position.y = $player.position.y
-		$player2.position.x = $player.position.x + 100
+		$player2.position.x = $player.position.x + 180
 		$player2.show()
 		$player2/AnimatedSprite2D.play("tep")
 		if row == 1:
@@ -47,7 +43,10 @@ func get_input():
 			$player.global_position = $tep3.global_position
 		if row == 3:
 			$player.global_position = $tep3.global_position
-		await get_tree().create_timer(0.5).timeout
+		$player2.show()
+		$player2/AnimatedSprite2D.play("tep")
+		await get_tree().create_timer(0.4).timeout
+		$player2/AnimatedSprite2D.stop()
 		$player2.hide()
 		
 func _physics_process(delta):
@@ -100,6 +99,6 @@ func _plus_level():
 	$Panel.show()
 	get_tree().change_scene_to_file("res://scenes/level_2.tscn")
 	
-  
+
 	
 	

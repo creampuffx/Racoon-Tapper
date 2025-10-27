@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=4 uid="uid://bbvi7bqkurtbo"]
+[gd_scene load_steps=73 format=4 uid="uid://bbvi7bqkurtbo"]
 
 [ext_resource type="Script" uid="uid://b8ag6qlhb3sfq" path="res://scenes/level_1.gd" id="1_kvult"]
 [ext_resource type="Texture2D" uid="uid://bv0c2ao5p52oj" path="res://assets/Modern tiles_Free/Interiors_free/48x48/Room_Builder_free_48x48.png" id="2_kf3d8"]
@@ -3220,6 +3220,82 @@ sources/1 = SubResource("TileSetAtlasSource_kvult")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kf3d8"]
 size = Vector2(1170, 199)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_r5fkv"]
+atlas = ExtResource("16_odcxm")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mopwt"]
+atlas = ExtResource("16_odcxm")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_odcxm"]
+atlas = ExtResource("16_odcxm")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x08b7"]
+atlas = ExtResource("16_odcxm")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v77eh"]
+atlas = ExtResource("16_odcxm")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cjfl5"]
+animations = [{
+"frames": [{
+"duration": 2.01,
+"texture": SubResource("AtlasTexture_r5fkv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mopwt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_odcxm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x08b7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v77eh")
+}],
+"loop": true,
+"name": &"tep",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2els"]
+radius = 11.996474
+height = 25.992935
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_kvult"]
+a = Vector2(-10.020042, 1490.0221)
+b = Vector2(-22.044088, -17.73836)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_1uqwn"]
+a = Vector2(2368.7375, 1436.8071)
+b = Vector2(-10.0200405, 1434.5898)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_2sj2h"]
+a = Vector2(2304.6094, 1523.2816)
+b = Vector2(2302.6052, 4.43459)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dqu65"]
+size = Vector2(98.19757, 928.7375)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_dqu65"]
+a = Vector2(1943.8877, -150.77605)
+b = Vector2(1933.8677, 1538.8027)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2sj2h"]
+size = Vector2(2406.8398, 149.06406)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r5fkv"]
+radius = 11.996474
+height = 25.992935
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mopwt"]
+size = Vector2(91, 148.5)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_ow2ny"]
 atlas = ExtResource("7_gthes")
 region = Rect2(0, 0, 64, 32)
@@ -3332,7 +3408,7 @@ region = Rect2(128, 96, 64, 32)
 atlas = ExtResource("7_gthes")
 region = Rect2(192, 96, 64, 32)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ow2ny"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_odcxm"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -3454,83 +3530,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2els"]
-radius = 11.996474
-height = 25.992935
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
-size = Vector2(91, 148.5)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_r5fkv"]
-atlas = ExtResource("16_odcxm")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mopwt"]
-atlas = ExtResource("16_odcxm")
-region = Rect2(64, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_odcxm"]
-atlas = ExtResource("16_odcxm")
-region = Rect2(128, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_x08b7"]
-atlas = ExtResource("16_odcxm")
-region = Rect2(192, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_v77eh"]
-atlas = ExtResource("16_odcxm")
-region = Rect2(256, 0, 64, 64)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_cjfl5"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_r5fkv")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_r5fkv")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mopwt")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_odcxm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_x08b7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_v77eh")
-}],
-"loop": true,
-"name": &"tep",
-"speed": 10.0
-}]
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_kvult"]
-a = Vector2(-10.020042, 1490.0221)
-b = Vector2(-22.044088, -17.73836)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_1uqwn"]
-a = Vector2(2368.7375, 1436.8071)
-b = Vector2(-10.0200405, 1434.5898)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_2sj2h"]
-a = Vector2(2304.6094, 1523.2816)
-b = Vector2(2302.6052, 4.43459)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dqu65"]
-size = Vector2(98.19757, 928.7375)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_dqu65"]
-a = Vector2(1943.8877, -150.77605)
-b = Vector2(1933.8677, 1538.8027)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2sj2h"]
-size = Vector2(2406.8398, 149.06406)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_p75kv"]
-size = Vector2(194.06546, 859.5817)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r5fkv"]
+size = Vector2(104.82307, 859.5817)
 
 [node name="level 1" type="Node2D"]
 scale = Vector2(0.49467775, 0.45138228)
@@ -3691,69 +3692,11 @@ scale = Vector2(2, 2)
 position = Vector2(577.1434, 91.93981)
 shape = SubResource("RectangleShape2D_kf3d8")
 
-[node name="player" type="CharacterBody2D" parent="." groups=["player"]]
-unique_name_in_owner = true
-z_index = 3
-position = Vector2(2150.127, 754.637)
-scale = Vector2(1.9088299, 1.7784854)
-script = ExtResource("6_hc45n")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player"]
-position = Vector2(0.4024385, -43.13752)
-scale = Vector2(2.8359377, 2.6640627)
-sprite_frames = SubResource("SpriteFrames_ow2ny")
-animation = &"idle_1"
-autoplay = "idle_1"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
-position = Vector2(0.40239406, 4.1981716)
-rotation = 3.1450477
-shape = SubResource("CapsuleShape2D_g2els")
-
-[node name="Marker2D" type="Marker2D" parent="player"]
-position = Vector2(-32, -76)
-scale = Vector2(1.3496385, 1.294807)
-
-[node name="collect" type="Area2D" parent="player" groups=["player"]]
-visible = false
-collision_layer = 64
-collision_mask = 32
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player/collect"]
-position = Vector2(5.5, -31.75)
-shape = SubResource("RectangleShape2D_g2els")
-
-[node name="beer-empty" type="Sprite2D" parent="player"]
-visible = false
-position = Vector2(4.2030845, 1.024724)
-scale = Vector2(-1.3827049, 1.7190086)
-texture = ExtResource("11_a1gjd")
-flip_h = true
-
-[node name="beer_2" type="Sprite2D" parent="player"]
-visible = false
-position = Vector2(4.2029634, 1.0246935)
-scale = Vector2(-1.382705, 1.7190083)
-texture = ExtResource("12_u7ucq")
-flip_h = true
-
-[node name="left" type="Marker2D" parent="player"]
-position = Vector2(-50.43125, 25.374687)
-
-[node name="right" type="Marker2D" parent="player"]
-position = Vector2(53.354195, 25.374687)
-
-[node name="put" type="Marker2D" parent="player"]
-position = Vector2(-21.8373, -43.137505)
-
-[node name="oven" type="Marker2D" parent="player"]
-position = Vector2(30.055424, 0.46116018)
-
 [node name="player2" type="CharacterBody2D" parent="." groups=["player"]]
 unique_name_in_owner = true
 visible = false
 z_index = 3
-position = Vector2(2150.127, 754.637)
+position = Vector2(2324.7456, 755.4572)
 scale = Vector2(1.9088299, 1.7784854)
 collision_layer = 0
 collision_mask = 0
@@ -3843,16 +3786,6 @@ bus = &"SFX"
 stream = ExtResource("15_m7v2g")
 bus = &"SFX"
 
-[node name="shoot_area" type="Node2D" parent="."]
-scale = Vector2(1.0000001, 1)
-
-[node name="Area2D" type="Area2D" parent="shoot_area"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="shoot_area/Area2D"]
-position = Vector2(2134.7224, 1008.0148)
-scale = Vector2(1.0000007, 0.9999998)
-shape = SubResource("RectangleShape2D_p75kv")
-
 [node name="ReferenceRect" type="ReferenceRect" parent="."]
 visible = false
 offset_left = 357.8087
@@ -3889,14 +3822,82 @@ text = "LEVEL 1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="player" type="CharacterBody2D" parent="." groups=["player"]]
+unique_name_in_owner = true
+z_index = 3
+position = Vector2(2150.2927, 754.5857)
+scale = Vector2(1.9088299, 1.7784854)
+script = ExtResource("6_hc45n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
+position = Vector2(-1, 27)
+rotation = 3.1450477
+shape = SubResource("CapsuleShape2D_r5fkv")
+
+[node name="Marker2D" type="Marker2D" parent="player"]
+position = Vector2(-32, -76)
+
+[node name="collect" type="Area2D" parent="player" groups=["player"]]
+collision_layer = 64
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player/collect"]
+visible = false
+position = Vector2(5.5, -31.75)
+shape = SubResource("RectangleShape2D_mopwt")
+
+[node name="beer-empty" type="Sprite2D" parent="player"]
+z_index = 1
+position = Vector2(4.2030845, 1.024724)
+scale = Vector2(-1.3827049, 1.7190086)
+texture = ExtResource("11_a1gjd")
+flip_h = true
+
+[node name="beer_2" type="Sprite2D" parent="player"]
+position = Vector2(4.2029634, 1.0246935)
+scale = Vector2(-1.382705, 1.7190083)
+texture = ExtResource("12_u7ucq")
+flip_h = true
+
+[node name="left" type="Marker2D" parent="player"]
+position = Vector2(-57.527737, -1.5258789e-05)
+
+[node name="right" type="Marker2D" parent="player"]
+position = Vector2(47.0681, -1.6212463e-05)
+
+[node name="put" type="Marker2D" parent="player"]
+position = Vector2(-21.8373, -43.137505)
+
+[node name="oven" type="Marker2D" parent="player"]
+position = Vector2(30.055424, 0.46116018)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player"]
+position = Vector2(0.4024385, -43.13752)
+scale = Vector2(2.8359377, 2.6640627)
+sprite_frames = SubResource("SpriteFrames_odcxm")
+animation = &"idle_1"
+autoplay = "idle_1"
+
+[node name="shoot_area" type="Node2D" parent="."]
+scale = Vector2(1.0000001, 1)
+
+[node name="Area2D" type="Area2D" parent="shoot_area"]
+z_index = 3
+position = Vector2(-13.9759035, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shoot_area/Area2D"]
+position = Vector2(2176.7488, 1046.1808)
+scale = Vector2(1.0000008, 1)
+shape = SubResource("RectangleShape2D_r5fkv")
+
 [connection signal="timeout" from="Spawn/Timer" to="Spawn" method="_on_timer_timeout"]
 [connection signal="client_satisfied" from="client" to="." method="_on_client_satisfied"]
 [connection signal="client_satisfied" from="client" to="." method="_on_client_client_satisfied"]
-[connection signal="body_entered" from="player/collect" to="." method="_on_collect_body_entered"]
 [connection signal="area_entered" from="wall" to="." method="_on_wall_area_entered"]
 [connection signal="area_entered" from="wall" to="client" method="_on_wall_area_entered"]
 [connection signal="body_entered" from="teleport/tp1" to="." method="_on_tp_1_body_entered"]
 [connection signal="body_entered" from="teleport/tp2" to="." method="_on_tp_2_body_entered"]
 [connection signal="body_entered" from="teleport/tp3" to="." method="_on_tp_3_body_entered"]
+[connection signal="body_entered" from="player/collect" to="." method="_on_collect_body_entered"]
 [connection signal="body_entered" from="shoot_area/Area2D" to="player" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="shoot_area/Area2D" to="player" method="_on_area_2d_body_exited"]

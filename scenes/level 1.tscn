@@ -3763,15 +3763,15 @@ position = Vector2(1117.2828, 1350.8934)
 shape = SubResource("RectangleShape2D_2sj2h")
 
 [node name="tep1" type="Marker2D" parent="."]
-position = Vector2(2161.0027, 755.4572)
+position = Vector2(2166.6497, 732.2796)
 scale = Vector2(0.52388114, 0.5622761)
 
 [node name="tep2" type="Marker2D" parent="."]
-position = Vector2(2150.4875, 1045.6769)
+position = Vector2(2156.1345, 1022.49927)
 scale = Vector2(0.52388114, 0.5622761)
 
 [node name="tep3" type="Marker2D" parent="."]
-position = Vector2(2150.487, 1333.681)
+position = Vector2(2156.134, 1310.5034)
 scale = Vector2(0.52388114, 0.5622761)
 
 [node name="glass_break" type="AudioStreamPlayer" parent="."]
@@ -3891,8 +3891,8 @@ scale = Vector2(1.0000008, 1)
 shape = SubResource("RectangleShape2D_r5fkv")
 
 [connection signal="timeout" from="Spawn/Timer" to="Spawn" method="_on_timer_timeout"]
-[connection signal="client_satisfied" from="client" to="." method="_on_client_satisfied"]
 [connection signal="client_satisfied" from="client" to="." method="_on_client_client_satisfied"]
+[connection signal="client_satisfied" from="client" to="." method="_on_client_satisfied"]
 [connection signal="area_entered" from="wall" to="." method="_on_wall_area_entered"]
 [connection signal="area_entered" from="wall" to="client" method="_on_wall_area_entered"]
 [connection signal="body_entered" from="teleport/tp1" to="." method="_on_tp_1_body_entered"]

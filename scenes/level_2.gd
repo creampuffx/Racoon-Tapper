@@ -2,7 +2,7 @@ extends Node2D
 @onready var empty_beer: CharacterBody2D = $"empty beer"
 @onready var client_amount: int = 5
 @onready var row = 2
-var level = 2
+var level = 1
 
 
 func _ready() -> void:
@@ -12,6 +12,7 @@ func _ready() -> void:
 	await get_tree().create_timer(6).timeout
 	$Panel.hide()
 	%player2.hide()
+	
 	
 	
 
@@ -54,10 +55,17 @@ func _physics_process(delta):
 	
 func _process(delta):
 	$clients_to_serve.text = "x" + str(Global.clients_alive)
+	if Global.level == 1:
+		$DirectionalLight2D.hide()
+		$PointLight2D.hide()
+	if Global.level > 1:
+		$DirectionalLight2D.show()
+		$PointLight2D.show()
 	await get_tree().create_timer(6).timeout
 	if Global.clients_alive == 0:
 		await get_tree().create_timer(2).timeout
 		_plus_level()
+	
 	
 	
 func _on_wall_area_entered(area: Area2D) -> void:
@@ -96,8 +104,10 @@ func _plus_level():
 	Global.level += 1
 	Global.spawn += 1
 	Global.speed += 10
-	$Panel.show()
 	get_tree().change_scene_to_file("res://scenes/level_2.tscn")
+	$Panel.show()
+	
+
 	
 
 	

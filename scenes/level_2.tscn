@@ -3680,17 +3680,18 @@ visible = false
 position = Vector2(5.5, -31.75)
 shape = SubResource("RectangleShape2D_1sb0y")
 
+[node name="beer_2" type="Sprite2D" parent="player"]
+position = Vector2(4.203003, 1.0246887)
+rotation = 3.1415927
+scale = Vector2(1.3827051, -1.7190082)
+texture = ExtResource("11_bv48q")
+flip_h = true
+
 [node name="beer-empty" type="Sprite2D" parent="player"]
 z_index = 1
 position = Vector2(4.2030845, 1.024724)
 scale = Vector2(-1.3827049, 1.7190086)
 texture = ExtResource("10_7qsfm")
-flip_h = true
-
-[node name="beer_2" type="Sprite2D" parent="player"]
-position = Vector2(4.2029634, 1.0246935)
-scale = Vector2(-1.382705, 1.7190083)
-texture = ExtResource("11_bv48q")
 flip_h = true
 
 [node name="left" type="Marker2D" parent="player"]

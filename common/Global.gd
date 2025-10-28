@@ -2,7 +2,7 @@ extends Node
 
 var SCORE: int = 0
 var clients_alive = 0 
-var level = 0
+var level = 1
 var spawn = 1
 var speed = 0
 

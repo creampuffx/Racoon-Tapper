@@ -57,7 +57,7 @@ func _process(delta):
 	$clients_to_serve.text = "x" + str(Global.clients_alive)
 	if Global.level == 1:
 		$DirectionalLight2D.hide()
-		$PointLight2D.hide()
+
 	if Global.level > 1:
 		$DirectionalLight2D.show()
 		$PointLight2D.show()

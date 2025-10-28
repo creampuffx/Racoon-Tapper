@@ -3807,6 +3807,7 @@ texture = SubResource("GradientTexture2D_igmy8")
 texture_scale = 0.45
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+visible = false
 z_index = 8
 color = Color(0.6867057, 0.8556416, 0.59613484, 1)
 blend_mode = 1
